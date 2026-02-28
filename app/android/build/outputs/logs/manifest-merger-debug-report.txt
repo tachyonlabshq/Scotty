@@ -1,0 +1,452 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:2:1-65:12
+INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:2:1-65:12
+INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:2:1-65:12
+INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:2:1-65:12
+MERGED from [androidx.navigation:navigation-common:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/16b28b8aec04d50f21d1964b53a64f0f/transformed/navigation-common-2.8.5/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/4a4cc33eb505c324ae6ff181755ec007/transformed/navigation-runtime-2.8.5/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/b4e8c441af47ebcbc718baaf95a4743a/transformed/navigation-common-ktx-2.8.5/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/1fee5fd50c005633101350126e54dde5/transformed/navigation-runtime-ktx-2.8.5/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-compose:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/8ecb659fab136ec5db4eb4896a226eb8/transformed/jetified-navigation-compose-2.8.5/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/25d1d233063a3efb9cc8a3ed2f5be184/transformed/jetified-activity-1.9.3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-ktx:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/1436fbeaafb44c3e3b654761f6754eb3/transformed/jetified-activity-ktx-1.9.3/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material3:material3-android:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/f84da32127886b2a4a16ea8f73ccfd87/transformed/jetified-material3-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.material:material-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/96978be9782776fffb34deeba00e8a7c/transformed/jetified-material-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-ripple-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/3410541dd928c50571bb19a37c776b89/transformed/jetified-material-ripple-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/1b4906ca423de817e18a1f28135cc3b5/transformed/jetified-foundation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/7c1f1a7b2209cc77f25b31bed2958224/transformed/jetified-foundation-layout-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/79cd762e071eef301386e9078a03e03d/transformed/jetified-animation-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/1cdfac1cc989009338490b7125ab9ea0/transformed/jetified-animation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/31167d99d674869f7e3fd56b0bef6874/transformed/jetified-ui-tooling-data-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/89e1d7a7f0e7f1013de2e0b50b3305c2/transformed/jetified-ui-unit-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/912a6c006d6dafd564a119298b1415a2/transformed/jetified-ui-geometry-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/26abe011f81b7c4aa64437e644b6c11a/transformed/jetified-ui-util-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-text-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/653699c95a978e7606feabb736b1dcfb/transformed/jetified-ui-text-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/465b2dbaf841004f79001f963b8bb3f5/transformed/jetified-ui-tooling-preview-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/0075b9f5a2c66742f6ec64f765c2a4f9/transformed/jetified-ui-graphics-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.activity:activity-compose:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/27b68d161dda529240451cb93b02dab4/transformed/jetified-activity-compose-1.9.3/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/1a56febf9bf2c2d94618d8dc8f645bdb/transformed/jetified-lifecycle-runtime-compose-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/7e4496caf0d2aa4550e3a13a33df77c2/transformed/lifecycle-livedata-core-2.8.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/michaelwong/.gradle/caches/8.12/transforms/17270a92a03f63a89ac9fa506655f454/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/michaelwong/.gradle/caches/8.12/transforms/9624d254209b405287dc969426fe63b9/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/041aab32d51ebd364bd1c510a7796de3/transformed/jetified-lifecycle-viewmodel-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/1c6c20f635baf543f7cdcedcc52347fb/transformed/jetified-lifecycle-runtime-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/ef3f32d9a82752df7dd9cab5f5a3e54f/transformed/jetified-lifecycle-viewmodel-ktx-2.8.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/19188191026b9fddc857080a83f922be/transformed/jetified-lifecycle-viewmodel-savedstate-2.8.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/95617ffa344240a8edfa3bf6a5f98ff7/transformed/jetified-lifecycle-runtime-ktx-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/851c5ef071d31ea49436562d646d34b3/transformed/jetified-lifecycle-viewmodel-compose-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/7445ec41bfcaf7c068ea2fd268f98a74/transformed/jetified-material-icons-extended-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/1b7cf452f9c6ed70e4409035fa7f9cd9/transformed/jetified-material-icons-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/742893cccaa0742e121690162e51af4f/transformed/jetified-ui-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/8f1599a7d7bbd6e19564d07605636d36/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.graphics:graphics-path:1.0.1] /Users/michaelwong/.gradle/caches/8.12/transforms/f55e524040408e919e146260d4812a68/transformed/jetified-graphics-path-1.0.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/74391e626533d597e706de971b754480/transformed/jetified-customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/08895e5697af837679051da67976f1cd/transformed/jetified-core-ktx-1.15.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.datastore:datastore-core-android:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/cfd388baa830f794386c662c5d9249be/transformed/jetified-datastore-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.datastore:datastore-android:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/622ee26d5841e5622d68173a07beeafd/transformed/jetified-datastore-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/b6a4f5ae6ab3db5d9c834f5d7d5d0206/transformed/jetified-datastore-preferences-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/71c3e724cce4ba5639e620b23198bde6/transformed/jetified-runtime-saveable-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/09f992bf9705d1d25bd543fb43b40b26/transformed/jetified-runtime-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.documentfile:documentfile:1.0.1] /Users/michaelwong/.gradle/caches/8.12/transforms/b1c9f5aa9fbf5ec79cfa8cc76ad29f47/transformed/documentfile-1.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/933171a38ece3afe6fc815ac7f768f64/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/5691b94987ffc4f6d3b1797ebee46cd6/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.2.0] /Users/michaelwong/.gradle/caches/8.12/transforms/fcbe78bf873a3a76a3d6d6c161f96386/transformed/jetified-tracing-1.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/3f7b38cc144f0253be6688c4d75f7108/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/michaelwong/.gradle/caches/8.12/transforms/566201306af642b4d49bfa24d8158dde/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/michaelwong/.gradle/caches/8.12/transforms/5b09f9a16ae52c724564bb66fa7bccb4/transformed/jetified-annotation-experimental-1.4.1/AndroidManifest.xml:2:1-7:12
+	package
+		INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:7:5-76
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:7:22-73
+uses-permission#android.permission.CHANGE_WIFI_MULTICAST_STATE
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:8:5-86
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:8:22-83
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:9:5-10:38
+	android:maxSdkVersion
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:10:9-35
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:9:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:11:5-12:38
+	android:maxSdkVersion
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:12:9-35
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:11:22-78
+uses-permission#android.permission.READ_MEDIA_IMAGES
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:13:5-76
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:13:22-73
+uses-permission#android.permission.READ_MEDIA_VIDEO
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:14:5-75
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:14:22-72
+uses-permission#android.permission.READ_MEDIA_AUDIO
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:15:5-75
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:15:22-72
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:16:5-77
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:16:22-74
+uses-permission#android.permission.FOREGROUND_SERVICE_DATA_SYNC
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:17:5-87
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:17:22-84
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:18:5-77
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:18:22-74
+uses-permission#android.permission.QUERY_ALL_PACKAGES
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:19:5-20:53
+	tools:ignore
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:20:9-50
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:19:22-74
+uses-permission#android.permission.NFC
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:21:5-62
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:21:22-59
+uses-feature#android.hardware.nfc.hce
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:23:5-86
+	android:required
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:23:59-83
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:23:19-58
+application
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:25:5-63:19
+INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:25:5-63:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/5691b94987ffc4f6d3b1797ebee46cd6/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/5691b94987ffc4f6d3b1797ebee46cd6/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/3f7b38cc144f0253be6688c4d75f7108/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/3f7b38cc144f0253be6688c4d75f7108/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+	android:extractNativeLibs
+		INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:31:9-35
+	android:label
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:29:9-41
+	android:roundIcon
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:30:9-54
+	tools:targetApi
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:34:9-29
+	android:icon
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:28:9-43
+	android:allowBackup
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:27:9-35
+	android:theme
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:32:9-47
+	android:usesCleartextTraffic
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:33:9-44
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:26:9-37
+activity#org.localsend.localsend_app.ui.MainActivity
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:36:9-44:20
+	android:exported
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:38:13-36
+	android:theme
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:39:13-51
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:37:13-44
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:40:13-43:29
+action#android.intent.action.MAIN
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:41:17-69
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:41:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:42:17-77
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:42:27-74
+service#org.localsend.localsend_app.service.FileTransferService
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:46:9-49:56
+	android:exported
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:48:13-37
+	android:foregroundServiceType
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:49:13-53
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:47:13-56
+service#org.localsend.localsend_app.service.NfcHceService
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:51:9-61:19
+	android:exported
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:53:13-36
+	android:permission
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:54:13-69
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:52:13-50
+intent-filter#action:name:android.nfc.cardemulation.action.HOST_APDU_SERVICE
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:55:13-57:29
+action#android.nfc.cardemulation.action.HOST_APDU_SERVICE
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:56:17-93
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:56:25-90
+meta-data#android.nfc.cardemulation.host_apdu_service
+ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:58:13-60:56
+	android:resource
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:60:17-53
+	android:name
+		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:59:17-75
+uses-sdk
+INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml
+INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml
+MERGED from [androidx.navigation:navigation-common:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/16b28b8aec04d50f21d1964b53a64f0f/transformed/navigation-common-2.8.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/16b28b8aec04d50f21d1964b53a64f0f/transformed/navigation-common-2.8.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/4a4cc33eb505c324ae6ff181755ec007/transformed/navigation-runtime-2.8.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/4a4cc33eb505c324ae6ff181755ec007/transformed/navigation-runtime-2.8.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/b4e8c441af47ebcbc718baaf95a4743a/transformed/navigation-common-ktx-2.8.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/b4e8c441af47ebcbc718baaf95a4743a/transformed/navigation-common-ktx-2.8.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/1fee5fd50c005633101350126e54dde5/transformed/navigation-runtime-ktx-2.8.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/1fee5fd50c005633101350126e54dde5/transformed/navigation-runtime-ktx-2.8.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/8ecb659fab136ec5db4eb4896a226eb8/transformed/jetified-navigation-compose-2.8.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/8ecb659fab136ec5db4eb4896a226eb8/transformed/jetified-navigation-compose-2.8.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/25d1d233063a3efb9cc8a3ed2f5be184/transformed/jetified-activity-1.9.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/25d1d233063a3efb9cc8a3ed2f5be184/transformed/jetified-activity-1.9.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/1436fbeaafb44c3e3b654761f6754eb3/transformed/jetified-activity-ktx-1.9.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/1436fbeaafb44c3e3b654761f6754eb3/transformed/jetified-activity-ktx-1.9.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material3:material3-android:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/f84da32127886b2a4a16ea8f73ccfd87/transformed/jetified-material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3-android:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/f84da32127886b2a4a16ea8f73ccfd87/transformed/jetified-material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/96978be9782776fffb34deeba00e8a7c/transformed/jetified-material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/96978be9782776fffb34deeba00e8a7c/transformed/jetified-material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/3410541dd928c50571bb19a37c776b89/transformed/jetified-material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/3410541dd928c50571bb19a37c776b89/transformed/jetified-material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/1b4906ca423de817e18a1f28135cc3b5/transformed/jetified-foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/1b4906ca423de817e18a1f28135cc3b5/transformed/jetified-foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/7c1f1a7b2209cc77f25b31bed2958224/transformed/jetified-foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/7c1f1a7b2209cc77f25b31bed2958224/transformed/jetified-foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/79cd762e071eef301386e9078a03e03d/transformed/jetified-animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/79cd762e071eef301386e9078a03e03d/transformed/jetified-animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/1cdfac1cc989009338490b7125ab9ea0/transformed/jetified-animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/1cdfac1cc989009338490b7125ab9ea0/transformed/jetified-animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/31167d99d674869f7e3fd56b0bef6874/transformed/jetified-ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/31167d99d674869f7e3fd56b0bef6874/transformed/jetified-ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/89e1d7a7f0e7f1013de2e0b50b3305c2/transformed/jetified-ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/89e1d7a7f0e7f1013de2e0b50b3305c2/transformed/jetified-ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/912a6c006d6dafd564a119298b1415a2/transformed/jetified-ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/912a6c006d6dafd564a119298b1415a2/transformed/jetified-ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/26abe011f81b7c4aa64437e644b6c11a/transformed/jetified-ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/26abe011f81b7c4aa64437e644b6c11a/transformed/jetified-ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/653699c95a978e7606feabb736b1dcfb/transformed/jetified-ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/653699c95a978e7606feabb736b1dcfb/transformed/jetified-ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/465b2dbaf841004f79001f963b8bb3f5/transformed/jetified-ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/465b2dbaf841004f79001f963b8bb3f5/transformed/jetified-ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/0075b9f5a2c66742f6ec64f765c2a4f9/transformed/jetified-ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/0075b9f5a2c66742f6ec64f765c2a4f9/transformed/jetified-ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-compose:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/27b68d161dda529240451cb93b02dab4/transformed/jetified-activity-compose-1.9.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/27b68d161dda529240451cb93b02dab4/transformed/jetified-activity-compose-1.9.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/1a56febf9bf2c2d94618d8dc8f645bdb/transformed/jetified-lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/1a56febf9bf2c2d94618d8dc8f645bdb/transformed/jetified-lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/7e4496caf0d2aa4550e3a13a33df77c2/transformed/lifecycle-livedata-core-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/7e4496caf0d2aa4550e3a13a33df77c2/transformed/lifecycle-livedata-core-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/michaelwong/.gradle/caches/8.12/transforms/17270a92a03f63a89ac9fa506655f454/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/michaelwong/.gradle/caches/8.12/transforms/17270a92a03f63a89ac9fa506655f454/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/michaelwong/.gradle/caches/8.12/transforms/9624d254209b405287dc969426fe63b9/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/michaelwong/.gradle/caches/8.12/transforms/9624d254209b405287dc969426fe63b9/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/041aab32d51ebd364bd1c510a7796de3/transformed/jetified-lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/041aab32d51ebd364bd1c510a7796de3/transformed/jetified-lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/1c6c20f635baf543f7cdcedcc52347fb/transformed/jetified-lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/1c6c20f635baf543f7cdcedcc52347fb/transformed/jetified-lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/ef3f32d9a82752df7dd9cab5f5a3e54f/transformed/jetified-lifecycle-viewmodel-ktx-2.8.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/ef3f32d9a82752df7dd9cab5f5a3e54f/transformed/jetified-lifecycle-viewmodel-ktx-2.8.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/19188191026b9fddc857080a83f922be/transformed/jetified-lifecycle-viewmodel-savedstate-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/19188191026b9fddc857080a83f922be/transformed/jetified-lifecycle-viewmodel-savedstate-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/95617ffa344240a8edfa3bf6a5f98ff7/transformed/jetified-lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/95617ffa344240a8edfa3bf6a5f98ff7/transformed/jetified-lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/851c5ef071d31ea49436562d646d34b3/transformed/jetified-lifecycle-viewmodel-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/851c5ef071d31ea49436562d646d34b3/transformed/jetified-lifecycle-viewmodel-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/7445ec41bfcaf7c068ea2fd268f98a74/transformed/jetified-material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/7445ec41bfcaf7c068ea2fd268f98a74/transformed/jetified-material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/1b7cf452f9c6ed70e4409035fa7f9cd9/transformed/jetified-material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/1b7cf452f9c6ed70e4409035fa7f9cd9/transformed/jetified-material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/742893cccaa0742e121690162e51af4f/transformed/jetified-ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/742893cccaa0742e121690162e51af4f/transformed/jetified-ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/8f1599a7d7bbd6e19564d07605636d36/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/8f1599a7d7bbd6e19564d07605636d36/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.graphics:graphics-path:1.0.1] /Users/michaelwong/.gradle/caches/8.12/transforms/f55e524040408e919e146260d4812a68/transformed/jetified-graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] /Users/michaelwong/.gradle/caches/8.12/transforms/f55e524040408e919e146260d4812a68/transformed/jetified-graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/74391e626533d597e706de971b754480/transformed/jetified-customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/74391e626533d597e706de971b754480/transformed/jetified-customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/08895e5697af837679051da67976f1cd/transformed/jetified-core-ktx-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/08895e5697af837679051da67976f1cd/transformed/jetified-core-ktx-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore-core-android:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/cfd388baa830f794386c662c5d9249be/transformed/jetified-datastore-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore-core-android:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/cfd388baa830f794386c662c5d9249be/transformed/jetified-datastore-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore-android:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/622ee26d5841e5622d68173a07beeafd/transformed/jetified-datastore-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-android:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/622ee26d5841e5622d68173a07beeafd/transformed/jetified-datastore-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/b6a4f5ae6ab3db5d9c834f5d7d5d0206/transformed/jetified-datastore-preferences-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/b6a4f5ae6ab3db5d9c834f5d7d5d0206/transformed/jetified-datastore-preferences-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/71c3e724cce4ba5639e620b23198bde6/transformed/jetified-runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/71c3e724cce4ba5639e620b23198bde6/transformed/jetified-runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/09f992bf9705d1d25bd543fb43b40b26/transformed/jetified-runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/09f992bf9705d1d25bd543fb43b40b26/transformed/jetified-runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.1] /Users/michaelwong/.gradle/caches/8.12/transforms/b1c9f5aa9fbf5ec79cfa8cc76ad29f47/transformed/documentfile-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.1] /Users/michaelwong/.gradle/caches/8.12/transforms/b1c9f5aa9fbf5ec79cfa8cc76ad29f47/transformed/documentfile-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/933171a38ece3afe6fc815ac7f768f64/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/933171a38ece3afe6fc815ac7f768f64/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/5691b94987ffc4f6d3b1797ebee46cd6/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/5691b94987ffc4f6d3b1797ebee46cd6/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.2.0] /Users/michaelwong/.gradle/caches/8.12/transforms/fcbe78bf873a3a76a3d6d6c161f96386/transformed/jetified-tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.2.0] /Users/michaelwong/.gradle/caches/8.12/transforms/fcbe78bf873a3a76a3d6d6c161f96386/transformed/jetified-tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/3f7b38cc144f0253be6688c4d75f7108/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/3f7b38cc144f0253be6688c4d75f7108/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/michaelwong/.gradle/caches/8.12/transforms/566201306af642b4d49bfa24d8158dde/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/michaelwong/.gradle/caches/8.12/transforms/566201306af642b4d49bfa24d8158dde/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/michaelwong/.gradle/caches/8.12/transforms/5b09f9a16ae52c724564bb66fa7bccb4/transformed/jetified-annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/michaelwong/.gradle/caches/8.12/transforms/5b09f9a16ae52c724564bb66fa7bccb4/transformed/jetified-annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+	android:targetSdkVersion
+		INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml
+activity#androidx.activity.ComponentActivity
+ADDED from [androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:24:13-63
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:24:13-71
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/5691b94987ffc4f6d3b1797ebee46cd6/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/5691b94987ffc4f6d3b1797ebee46cd6/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:30:17-78
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
+permission#org.localsend.localsend_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
+uses-permission#org.localsend.localsend_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92

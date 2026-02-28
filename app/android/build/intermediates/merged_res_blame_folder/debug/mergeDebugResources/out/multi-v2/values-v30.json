@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "org.localsend.localsend_app-mergeDebugResources-55:/values-v30/values-v30.xml",
+            "map": [
+                {
+                    "source": "/Users/michaelwong/.gradle/caches/8.12/transforms/f84da32127886b2a4a16ea8f73ccfd87/transformed/jetified-material3-release/res/values-v30/values-v30.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "72",
+                        "endOffsets": "123"
+                    }
+                }
+            ]
+        }
+    ]
+}
