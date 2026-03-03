@@ -1,14 +1,19 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:2:1-65:12
-INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:2:1-65:12
-INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:2:1-65:12
-INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:2:1-65:12
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:2:1-73:12
+INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:2:1-73:12
+INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:2:1-73:12
+INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:2:1-73:12
+MERGED from [com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/michaelwong/.gradle/caches/8.12/transforms/57ece66a3ca0df9191594fbdf1bb3793/transformed/jetified-play-services-tasks-18.2.0/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/michaelwong/.gradle/caches/8.12/transforms/492763e5882104dab8bf83d69d4748cd/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.navigation:navigation-common:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/16b28b8aec04d50f21d1964b53a64f0f/transformed/navigation-common-2.8.5/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/4a4cc33eb505c324ae6ff181755ec007/transformed/navigation-runtime-2.8.5/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/b4e8c441af47ebcbc718baaf95a4743a/transformed/navigation-common-ktx-2.8.5/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-runtime-ktx:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/1fee5fd50c005633101350126e54dde5/transformed/navigation-runtime-ktx-2.8.5/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-compose:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/8ecb659fab136ec5db4eb4896a226eb8/transformed/jetified-navigation-compose-2.8.5/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/michaelwong/.gradle/caches/8.12/transforms/132975e6ee60827fd105880b0b914a3e/transformed/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/25d1d233063a3efb9cc8a3ed2f5be184/transformed/jetified-activity-1.9.3/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity-ktx:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/1436fbeaafb44c3e3b654761f6754eb3/transformed/jetified-activity-ktx-1.9.3/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material3:material3-android:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/f84da32127886b2a4a16ea8f73ccfd87/transformed/jetified-material3-release/AndroidManifest.xml:17:1-22:12
@@ -28,12 +33,16 @@ MERGED from [androidx.compose.ui:ui-graphics-android:1.7.6] /Users/michaelwong/.
 MERGED from [androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.activity:activity-compose:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/27b68d161dda529240451cb93b02dab4/transformed/jetified-activity-compose-1.9.3/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/c21ec08c5b4a5b5847053924dc7b9d7a/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/ebdb2754079c6d9e98ebdb820c5254e1/transformed/jetified-lifecycle-livedata-core-ktx-2.8.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/7ae48fc4305754f73bd74e78e36293ea/transformed/lifecycle-livedata-2.8.7/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/1a56febf9bf2c2d94618d8dc8f645bdb/transformed/jetified-lifecycle-runtime-compose-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/7e4496caf0d2aa4550e3a13a33df77c2/transformed/lifecycle-livedata-core-2.8.7/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/michaelwong/.gradle/caches/8.12/transforms/17270a92a03f63a89ac9fa506655f454/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/michaelwong/.gradle/caches/8.12/transforms/9624d254209b405287dc969426fe63b9/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/0459cdd271955b11e77ba580abf515b8/transformed/lifecycle-viewmodel-2.8.7/AndroidManifest.xml:2:1-5:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/041aab32d51ebd364bd1c510a7796de3/transformed/jetified-lifecycle-viewmodel-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/1c6c20f635baf543f7cdcedcc52347fb/transformed/jetified-lifecycle-runtime-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/ef3f32d9a82752df7dd9cab5f5a3e54f/transformed/jetified-lifecycle-viewmodel-ktx-2.8.7/AndroidManifest.xml:2:1-7:12
@@ -45,6 +54,8 @@ MERGED from [androidx.compose.material:material-icons-core-android:1.7.6] /Users
 MERGED from [androidx.compose.ui:ui-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/742893cccaa0742e121690162e51af4f/transformed/jetified-ui-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.autofill:autofill:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/8f1599a7d7bbd6e19564d07605636d36/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.graphics:graphics-path:1.0.1] /Users/michaelwong/.gradle/caches/8.12/transforms/f55e524040408e919e146260d4812a68/transformed/jetified-graphics-path-1.0.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/fdb02b4e3511d06e8442ab6d951d9c22/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/028b3e23f0d5fb0e38dbb5e405c49133/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/74391e626533d597e706de971b754480/transformed/jetified-customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.core:core-ktx:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/08895e5697af837679051da67976f1cd/transformed/jetified-core-ktx-1.15.0/AndroidManifest.xml:2:1-7:12
@@ -62,86 +73,120 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mich
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/michaelwong/.gradle/caches/8.12/transforms/566201306af642b4d49bfa24d8158dde/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/michaelwong/.gradle/caches/8.12/transforms/5b09f9a16ae52c724564bb66fa7bccb4/transformed/jetified-annotation-experimental-1.4.1/AndroidManifest.xml:2:1-7:12
 	package
-		INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:3:5-51
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:5:5-67
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:5:22-64
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:6:5-79
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:6:5-79
+MERGED from [com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:6:5-79
+MERGED from [com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:6:5-79
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:6:22-76
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:6:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:7:5-76
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:7:5-76
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:7:22-73
-uses-permission#android.permission.CHANGE_WIFI_MULTICAST_STATE
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:8:5-86
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:7:22-73
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:8:5-76
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:8:22-83
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:8:22-73
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:9:5-10:38
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:11:5-12:38
 	android:maxSdkVersion
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:10:9-35
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:12:9-35
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:9:22-77
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:11:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:11:5-12:38
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:13:5-14:38
 	android:maxSdkVersion
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:14:9-35
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:11:22-78
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:13:22-78
 uses-permission#android.permission.READ_MEDIA_IMAGES
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:13:5-76
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:15:5-76
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:13:22-73
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:15:22-73
 uses-permission#android.permission.READ_MEDIA_VIDEO
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:14:5-75
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:16:5-75
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:14:22-72
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:16:22-72
 uses-permission#android.permission.READ_MEDIA_AUDIO
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:15:5-75
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:17:5-75
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:15:22-72
-uses-permission#android.permission.FOREGROUND_SERVICE
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:16:5-77
-	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:16:22-74
-uses-permission#android.permission.FOREGROUND_SERVICE_DATA_SYNC
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:17:5-87
-	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:17:22-84
-uses-permission#android.permission.POST_NOTIFICATIONS
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:18:5-77
-	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:18:22-74
-uses-permission#android.permission.QUERY_ALL_PACKAGES
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:19:5-20:53
-	tools:ignore
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:20:9-50
-	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:19:22-74
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:17:22-72
 uses-permission#android.permission.NFC
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:21:5-62
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:19:5-62
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:21:22-59
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:19:22-59
 uses-feature#android.hardware.nfc.hce
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:23:5-86
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:20:5-86
 	android:required
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:23:59-83
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:20:59-83
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:23:19-58
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:20:19-58
+uses-permission#android.permission.BLUETOOTH
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:23:5-95
+	android:maxSdkVersion
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:23:66-92
+	android:name
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:23:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:24:5-101
+	android:maxSdkVersion
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:24:72-98
+	android:name
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:24:22-71
+uses-permission#android.permission.BLUETOOTH_SCAN
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:26:5-27:71
+	android:usesPermissionFlags
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:27:22-68
+	android:name
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:26:22-70
+uses-permission#android.permission.BLUETOOTH_ADVERTISE
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:28:5-78
+	android:name
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:28:22-75
+uses-permission#android.permission.BLUETOOTH_CONNECT
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:29:5-76
+	android:name
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:29:22-73
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:32:5-108
+	android:maxSdkVersion
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:32:79-105
+	android:name
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:32:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:33:5-79
+	android:name
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:33:22-76
+uses-permission#android.permission.NEARBY_WIFI_DEVICES
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:35:5-36:71
+	android:usesPermissionFlags
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:36:22-68
+	android:name
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:35:22-75
 application
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:25:5-63:19
-INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:25:5-63:19
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:38:5-71:19
+INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:38:5-71:19
+MERGED from [com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:8:5-10:19
+MERGED from [com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:8:5-10:19
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/michaelwong/.gradle/caches/8.12/transforms/57ece66a3ca0df9191594fbdf1bb3793/transformed/jetified-play-services-tasks-18.2.0/AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/michaelwong/.gradle/caches/8.12/transforms/57ece66a3ca0df9191594fbdf1bb3793/transformed/jetified-play-services-tasks-18.2.0/AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/michaelwong/.gradle/caches/8.12/transforms/492763e5882104dab8bf83d69d4748cd/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:5:5-7:19
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/michaelwong/.gradle/caches/8.12/transforms/492763e5882104dab8bf83d69d4748cd/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:5:5-7:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:22:5-26:19
@@ -159,77 +204,77 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/michaelwong/.gradle/
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/3f7b38cc144f0253be6688c4d75f7108/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/3f7b38cc144f0253be6688c4d75f7108/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 	android:extractNativeLibs
-		INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:31:9-35
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:44:9-35
 	android:label
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:29:9-41
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:42:9-41
 	android:roundIcon
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:30:9-54
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:43:9-54
 	tools:targetApi
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:34:9-29
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:47:9-29
 	android:icon
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:28:9-43
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:41:9-43
 	android:allowBackup
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:27:9-35
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:40:9-35
 	android:theme
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:32:9-47
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:45:9-47
 	android:usesCleartextTraffic
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:33:9-44
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:46:9-44
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:26:9-37
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:39:9-37
 activity#org.localsend.localsend_app.ui.MainActivity
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:36:9-44:20
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:49:9-57:20
 	android:exported
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:38:13-36
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:51:13-36
 	android:theme
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:39:13-51
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:52:13-51
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:37:13-44
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:50:13-44
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:40:13-43:29
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:53:13-56:29
 action#android.intent.action.MAIN
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:41:17-69
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:54:17-69
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:41:25-66
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:54:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:42:17-77
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:55:17-77
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:42:27-74
-service#org.localsend.localsend_app.service.FileTransferService
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:46:9-49:56
-	android:exported
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:48:13-37
-	android:foregroundServiceType
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:49:13-53
-	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:47:13-56
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:55:27-74
 service#org.localsend.localsend_app.service.NfcHceService
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:51:9-61:19
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:59:9-69:19
 	android:exported
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:53:13-36
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:61:13-36
 	android:permission
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:54:13-69
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:62:13-69
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:52:13-50
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:60:13-50
 intent-filter#action:name:android.nfc.cardemulation.action.HOST_APDU_SERVICE
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:55:13-57:29
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:63:13-65:29
 action#android.nfc.cardemulation.action.HOST_APDU_SERVICE
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:56:17-93
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:64:17-93
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:56:25-90
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:64:25-90
 meta-data#android.nfc.cardemulation.host_apdu_service
-ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:58:13-60:56
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:66:13-68:56
 	android:resource
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:60:17-53
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:68:17-53
 	android:name
-		ADDED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml:59:17-75
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:67:17-75
 uses-sdk
-INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml
-INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml
+INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml
+INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml
+MERGED from [com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:4:5-44
+MERGED from [com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:4:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/michaelwong/.gradle/caches/8.12/transforms/57ece66a3ca0df9191594fbdf1bb3793/transformed/jetified-play-services-tasks-18.2.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/michaelwong/.gradle/caches/8.12/transforms/57ece66a3ca0df9191594fbdf1bb3793/transformed/jetified-play-services-tasks-18.2.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/michaelwong/.gradle/caches/8.12/transforms/492763e5882104dab8bf83d69d4748cd/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/michaelwong/.gradle/caches/8.12/transforms/492763e5882104dab8bf83d69d4748cd/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:3:5-44
 MERGED from [androidx.navigation:navigation-common:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/16b28b8aec04d50f21d1964b53a64f0f/transformed/navigation-common-2.8.5/AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-common:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/16b28b8aec04d50f21d1964b53a64f0f/transformed/navigation-common-2.8.5/AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-runtime:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/4a4cc33eb505c324ae6ff181755ec007/transformed/navigation-runtime-2.8.5/AndroidManifest.xml:20:5-44
@@ -240,6 +285,8 @@ MERGED from [androidx.navigation:navigation-runtime-ktx:2.8.5] /Users/michaelwon
 MERGED from [androidx.navigation:navigation-runtime-ktx:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/1fee5fd50c005633101350126e54dde5/transformed/navigation-runtime-ktx-2.8.5/AndroidManifest.xml:5:5-44
 MERGED from [androidx.navigation:navigation-compose:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/8ecb659fab136ec5db4eb4896a226eb8/transformed/jetified-navigation-compose-2.8.5/AndroidManifest.xml:5:5-44
 MERGED from [androidx.navigation:navigation-compose:2.8.5] /Users/michaelwong/.gradle/caches/8.12/transforms/8ecb659fab136ec5db4eb4896a226eb8/transformed/jetified-navigation-compose-2.8.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/michaelwong/.gradle/caches/8.12/transforms/132975e6ee60827fd105880b0b914a3e/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/michaelwong/.gradle/caches/8.12/transforms/132975e6ee60827fd105880b0b914a3e/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/25d1d233063a3efb9cc8a3ed2f5be184/transformed/jetified-activity-1.9.3/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/25d1d233063a3efb9cc8a3ed2f5be184/transformed/jetified-activity-1.9.3/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity-ktx:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/1436fbeaafb44c3e3b654761f6754eb3/transformed/jetified-activity-ktx-1.9.3/AndroidManifest.xml:5:5-44
@@ -278,10 +325,16 @@ MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.g
 MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity-compose:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/27b68d161dda529240451cb93b02dab4/transformed/jetified-activity-compose-1.9.3/AndroidManifest.xml:5:5-44
 MERGED from [androidx.activity:activity-compose:1.9.3] /Users/michaelwong/.gradle/caches/8.12/transforms/27b68d161dda529240451cb93b02dab4/transformed/jetified-activity-compose-1.9.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/c21ec08c5b4a5b5847053924dc7b9d7a/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/c21ec08c5b4a5b5847053924dc7b9d7a/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/ebdb2754079c6d9e98ebdb820c5254e1/transformed/jetified-lifecycle-livedata-core-ktx-2.8.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/ebdb2754079c6d9e98ebdb820c5254e1/transformed/jetified-lifecycle-livedata-core-ktx-2.8.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/7ae48fc4305754f73bd74e78e36293ea/transformed/lifecycle-livedata-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/7ae48fc4305754f73bd74e78e36293ea/transformed/lifecycle-livedata-2.8.7/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/1a56febf9bf2c2d94618d8dc8f645bdb/transformed/jetified-lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/1a56febf9bf2c2d94618d8dc8f645bdb/transformed/jetified-lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/7e4496caf0d2aa4550e3a13a33df77c2/transformed/lifecycle-livedata-core-2.8.7/AndroidManifest.xml:20:5-44
@@ -290,6 +343,8 @@ MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/michaelwong/.gradl
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/michaelwong/.gradle/caches/8.12/transforms/17270a92a03f63a89ac9fa506655f454/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/michaelwong/.gradle/caches/8.12/transforms/9624d254209b405287dc969426fe63b9/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/michaelwong/.gradle/caches/8.12/transforms/9624d254209b405287dc969426fe63b9/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/0459cdd271955b11e77ba580abf515b8/transformed/lifecycle-viewmodel-2.8.7/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/0459cdd271955b11e77ba580abf515b8/transformed/lifecycle-viewmodel-2.8.7/AndroidManifest.xml:4:5-43
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/041aab32d51ebd364bd1c510a7796de3/transformed/jetified-lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/041aab32d51ebd364bd1c510a7796de3/transformed/jetified-lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/1c6c20f635baf543f7cdcedcc52347fb/transformed/jetified-lifecycle-runtime-release/AndroidManifest.xml:20:5-44
@@ -312,6 +367,10 @@ MERGED from [androidx.autofill:autofill:1.0.0] /Users/michaelwong/.gradle/caches
 MERGED from [androidx.autofill:autofill:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/8f1599a7d7bbd6e19564d07605636d36/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.graphics:graphics-path:1.0.1] /Users/michaelwong/.gradle/caches/8.12/transforms/f55e524040408e919e146260d4812a68/transformed/jetified-graphics-path-1.0.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.graphics:graphics-path:1.0.1] /Users/michaelwong/.gradle/caches/8.12/transforms/f55e524040408e919e146260d4812a68/transformed/jetified-graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/fdb02b4e3511d06e8442ab6d951d9c22/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/fdb02b4e3511d06e8442ab6d951d9c22/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/028b3e23f0d5fb0e38dbb5e405c49133/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/028b3e23f0d5fb0e38dbb5e405c49133/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/74391e626533d597e706de971b754480/transformed/jetified-customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
@@ -345,9 +404,31 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/michaelwong/.gradle/c
 MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/michaelwong/.gradle/caches/8.12/transforms/5b09f9a16ae52c724564bb66fa7bccb4/transformed/jetified-annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/michaelwong/.gradle/caches/8.12/transforms/5b09f9a16ae52c724564bb66fa7bccb4/transformed/jetified-annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
 	android:targetSdkVersion
-		INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml
+service#com.google.android.gms.nearby.exposurenotification.WakeUpService
+ADDED from [com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:9:9-214
+	android:exported
+		ADDED from [com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:9:98-121
+	android:permission
+		ADDED from [com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:9:122-211
+	android:name
+		ADDED from [com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:9:18-97
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.4.0] /Users/michaelwong/.gradle/caches/8.12/transforms/492763e5882104dab8bf83d69d4748cd/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.4.0] /Users/michaelwong/.gradle/caches/8.12/transforms/492763e5882104dab8bf83d69d4748cd/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.4.0] /Users/michaelwong/.gradle/caches/8.12/transforms/492763e5882104dab8bf83d69d4748cd/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
 activity#androidx.activity.ComponentActivity
 ADDED from [androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:23:9-25:39
 	android:exported

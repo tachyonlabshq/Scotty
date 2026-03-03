@@ -73,6 +73,9 @@ dependencies {
 
     implementation("androidx.documentfile:documentfile:1.0.1")
 
+    // Nearby Connections API
+    implementation("com.google.android.gms:play-services-nearby:19.3.0")
+
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }

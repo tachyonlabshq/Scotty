@@ -1,11 +1,11 @@
-#Fri Feb 27 12:08:02 EST 2026
-base.0=/Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.2=/Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/build/intermediates/dex/debug/mergeProjectDexDebug/15/classes.dex
-base.3=/Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/build/intermediates/dex/debug/mergeProjectDexDebug/4/classes.dex
-base.4=/Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/build/intermediates/dex/debug/mergeProjectDexDebug/7/classes.dex
-base.5=/Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
-base.6=/Users/michaelwong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/01 - Projects/Scotty/app/android/build/intermediates/dex/debug/mergeExtDexDebug/classes3.dex
+#Mon Mar 02 19:31:47 EST 2026
+base.0=/Users/michaelwong/Developer/Scotty/app/android/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/Users/michaelwong/Developer/Scotty/app/android/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.2=/Users/michaelwong/Developer/Scotty/app/android/build/intermediates/dex/debug/mergeProjectDexDebug/15/classes.dex
+base.3=/Users/michaelwong/Developer/Scotty/app/android/build/intermediates/dex/debug/mergeProjectDexDebug/4/classes.dex
+base.4=/Users/michaelwong/Developer/Scotty/app/android/build/intermediates/dex/debug/mergeProjectDexDebug/7/classes.dex
+base.5=/Users/michaelwong/Developer/Scotty/app/android/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+base.6=/Users/michaelwong/Developer/Scotty/app/android/build/intermediates/dex/debug/mergeExtDexDebug/classes3.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=15/classes.dex

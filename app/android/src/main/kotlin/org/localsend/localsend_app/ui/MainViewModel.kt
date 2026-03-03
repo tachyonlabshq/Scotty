@@ -2,36 +2,38 @@ package org.localsend.localsend_app.ui
 
 import android.app.Activity
 import android.app.Application
+import android.net.Uri
 import android.os.Build
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.gson.Gson
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import org.localsend.localsend_app.model.*
-import org.localsend.localsend_app.service.FileServerService
-import org.localsend.localsend_app.service.FileTransferClient
-import org.localsend.localsend_app.service.NetworkDiscoveryService
-import org.localsend.localsend_app.service.NfcDevicePayload
-import org.localsend.localsend_app.service.NfcHceService
+import org.localsend.localsend_app.model.AppSettings
+import org.localsend.localsend_app.service.NearbyTransferService
+import org.localsend.localsend_app.service.NfcBeamMessage
+import org.localsend.localsend_app.service.NfcMessageHub
 import org.localsend.localsend_app.service.NfcReaderManager
-import android.net.Uri
+import org.localsend.localsend_app.service.TransferStatus
+
+sealed class NfcBeamStatus {
+    object Idle : NfcBeamStatus()
+    object Ready : NfcBeamStatus()
+    // When the sender is advertising its Endpoint ID and waiting for NFC tap
+    data class Advertising(val endpointToken: String) : NfcBeamStatus()
+    // When the receiver is discovering because it was tapped
+    object Discovering : NfcBeamStatus()
+    data class Connecting(val deviceName: String) : NfcBeamStatus()
+    // When an error occurs
+    data class Error(val message: String) : NfcBeamStatus()
+}
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val gson = Gson()
-    private val networkDiscovery = NetworkDiscoveryService(application)
-    private val fileServer = FileServerService(application)
-    private val fileTransferClient = FileTransferClient(application)
+    private val nearbyTransferService = NearbyTransferService(application)
 
-    val nearbyDevices = networkDiscovery.nearbyDevices
-    val isScanning = networkDiscovery.isScanning
-
-    val isServerRunning = fileServer.isServerRunning
-    val localIp = fileServer.localIp
-
-    val transferProgress = fileTransferClient.transferProgress
-    val isTransferring = fileTransferClient.isTransferring
+    val transferStatus = nearbyTransferService.status
+    val transferProgress = nearbyTransferService.transferProgress
+    val transferError = nearbyTransferService.errorMessage
 
     private val _selectedTab = MutableStateFlow(0)
     val selectedTab: StateFlow<Int> = _selectedTab.asStateFlow()
@@ -49,88 +51,104 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val _quickSave = MutableStateFlow(false)
     val quickSave: StateFlow<Boolean> = _quickSave.asStateFlow()
 
-    // --- NFC Beam state ---
     private val _nfcBeamStatus = MutableStateFlow<NfcBeamStatus>(NfcBeamStatus.Idle)
     val nfcBeamStatus: StateFlow<NfcBeamStatus> = _nfcBeamStatus.asStateFlow()
 
     val nfcReaderManager = NfcReaderManager(
-        onDeviceDiscovered = { device ->
+        onBeamSent = {
             viewModelScope.launch {
-                _nfcBeamStatus.value = NfcBeamStatus.Connecting(device)
-                sendToDevice(device)
+                _nfcBeamStatus.value = NfcBeamStatus.Connecting("Target Device")
             }
         },
         onError = { error ->
             viewModelScope.launch {
                 _nfcBeamStatus.value = NfcBeamStatus.Error(error)
+                nearbyTransferService.reset()
             }
         }
     )
 
     init {
-        startServer()
-        startDiscovery()
-        // Sync device info to both NFC HCE and HTTP /info endpoint
-        updateNfcDeviceInfo()
-        updateServerDeviceInfo()
-        // Refresh when localIp changes
+        // Observers for state events
         viewModelScope.launch {
-            localIp.collect { updateNfcDeviceInfo() }
+            NfcMessageHub.incomingMessages.collect { msg ->
+                if (msg.action == "discover") {
+                    _nfcBeamStatus.value = NfcBeamStatus.Discovering
+                    nearbyTransferService.startDiscoveryToReceive(
+                        targetAdvertisedName = msg.targetEndpoint,
+                        deviceName = _settings.value.alias
+                    )
+                }
+            }
         }
-        // Refresh when settings change
+
         viewModelScope.launch {
-            _settings.collect { updateServerDeviceInfo() }
+            transferStatus.collect { status ->
+                when (status) {
+                    TransferStatus.ERROR -> {
+                        _nfcBeamStatus.value = NfcBeamStatus.Error(transferError.value ?: "Unknown error")
+                    }
+                    TransferStatus.SUCCESS -> {
+                        _nfcBeamStatus.value = NfcBeamStatus.Idle
+                        if (pendingToSend) {
+                            // Clear files after send completes
+                            clearFiles()
+                            pendingToSend = false
+                        }
+                    }
+                    TransferStatus.IDLE -> {
+                        if (_nfcBeamStatus.value !is NfcBeamStatus.Ready) {
+                             _nfcBeamStatus.value = NfcBeamStatus.Idle
+                        }
+                    }
+                    else -> {}
+                }
+            }
         }
     }
 
-    private fun startServer() {
-        val localIp = networkDiscovery.getLocalIp()
-        fileServer.setLocalIp(localIp ?: "127.0.0.1")
-        fileServer.startServer(_settings.value.port) { _ -> }
-    }
+    private var pendingToSend = false
 
-    private fun updateServerDeviceInfo() {
-        val s = _settings.value
-        fileServer.updateDeviceInfo(
-            alias = s.alias,
-            model = s.deviceModel,
-            fp = s.fingerprint
-        )
-    }
-
-    private fun startDiscovery() {
-        networkDiscovery.startDiscovery()
-    }
-
-    /** Update the NFC HCE service's device payload so tapping devices get fresh info. */
-    private fun updateNfcDeviceInfo() {
-        val ip = networkDiscovery.getLocalIp() ?: return
-        val settings = _settings.value
-        val payload = NfcDevicePayload(
-            ip = ip,
-            port = settings.port,
-            https = false,
-            fingerprint = settings.fingerprint,
-            alias = settings.alias,
-            deviceModel = settings.deviceModel
-        )
-        NfcHceService.deviceInfoJson = gson.toJson(payload)
-    }
-
+    /**
+     * Used by the SENDER. When the user selects files and goes to the Send tab,
+     * they are "ready to beam". This kicks off advertising to get an endpoint token.
+     */
     fun enableNfcBeam(activity: Activity) {
+        if (_selectedFiles.value.isEmpty()) {
+            _nfcBeamStatus.value = NfcBeamStatus.Ready
+            return
+        }
+
+        pendingToSend = true
         _nfcBeamStatus.value = NfcBeamStatus.Ready
-        nfcReaderManager.enable(activity)
+
+        val uris = _selectedFiles.value.map { it.first }
+        nearbyTransferService.startAdvertisingForSend(uris, _settings.value.alias) { endpointToken ->
+            _nfcBeamStatus.value = NfcBeamStatus.Advertising(endpointToken)
+            
+            // Now that we have the endpoint token, we can ACTIVATE reader mode.
+            // When the SENDER (us) taps the RECEIVER, the NfcReaderManager will send this message.
+            val message = NfcBeamMessage(
+                action = "discover",
+                targetEndpoint = endpointToken,
+                deviceName = _settings.value.alias
+            )
+            nfcReaderManager.enable(activity, message)
+        }
     }
 
     fun disableNfcBeam(activity: Activity) {
         nfcReaderManager.disable(activity)
-        if (_nfcBeamStatus.value is NfcBeamStatus.Ready) {
+        nearbyTransferService.stopAll()
+        pendingToSend = false
+        if (_nfcBeamStatus.value !is NfcBeamStatus.Idle) {
             _nfcBeamStatus.value = NfcBeamStatus.Idle
         }
     }
 
     fun resetNfcBeamStatus() {
         _nfcBeamStatus.value = NfcBeamStatus.Idle
+        nearbyTransferService.clearError()
     }
     
     fun selectTab(index: Int) {
@@ -149,18 +167,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     
     fun clearFiles() {
         _selectedFiles.value = emptyList()
-    }
-    
-    fun sendToDevice(device: Device) {
-        if (_selectedFiles.value.isEmpty()) return
-        
-        fileTransferClient.sendFiles(
-            targetDevice = device,
-            files = _selectedFiles.value,
-            onProgress = { fileId, sent, total ->
-                // Update progress UI
-            }
-        )
     }
     
     fun toggleQuickSave() {
@@ -195,8 +201,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     
     override fun onCleared() {
         super.onCleared()
-        networkDiscovery.cleanup()
-        fileServer.cleanup()
-        fileTransferClient.cleanup()
+        nearbyTransferService.stopAll()
     }
 }

@@ -4,10 +4,8 @@ import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.core.*
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
@@ -20,21 +18,15 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import org.localsend.localsend_app.model.Device
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SendScreen(viewModel: MainViewModel) {
     val selectedFiles by viewModel.selectedFiles.collectAsState()
-    val nearbyDevices by viewModel.nearbyDevices.collectAsState()
-    val isScanning by viewModel.isScanning.collectAsState()
-    val isTransferring by viewModel.isTransferring.collectAsState()
     val transferProgress by viewModel.transferProgress.collectAsState()
     val nfcBeamStatus by viewModel.nfcBeamStatus.collectAsState()
 
     val context = LocalContext.current
-
-    var selectedDevice by remember { mutableStateOf<Device?>(null) }
 
     val filePickerLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.OpenMultipleDocuments()
@@ -117,17 +109,20 @@ fun SendScreen(viewModel: MainViewModel) {
             }
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(32.dp))
 
         // ── NFC BEAM BANNER ──────────────────────────────────────────────────
         // Show beam UI when files are selected and NFC is active
         if (selectedFiles.isNotEmpty()) {
             when (val status = nfcBeamStatus) {
-                is NfcBeamStatus.Ready -> {
+                is NfcBeamStatus.Ready, is NfcBeamStatus.Advertising -> {
                     NfcBeamReadyCard()
                 }
                 is NfcBeamStatus.Connecting -> {
-                    NfcBeamConnectingCard(deviceAlias = status.device.alias)
+                    NfcBeamConnectingCard(deviceAlias = status.deviceName)
+                }
+                is NfcBeamStatus.Discovering -> {
+                    NfcBeamConnectingCard(deviceAlias = "Discovering Target...")
                 }
                 is NfcBeamStatus.Error -> {
                     Card(
@@ -147,83 +142,19 @@ fun SendScreen(viewModel: MainViewModel) {
                 else -> Unit
             }
             Spacer(modifier = Modifier.height(16.dp))
+        } else {
+            // Idle text
+            Box(modifier = Modifier.fillMaxWidth().weight(1f), contentAlignment = Alignment.Center) {
+                Text(
+                    text = "Select files to begin beaming",
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
         }
         // ────────────────────────────────────────────────────────────────────
 
-        // Device selection section (Wi-Fi discovery fallback)
-        Card(modifier = Modifier.fillMaxWidth()) {
-            Column(modifier = Modifier.padding(16.dp)) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(text = "Send to", style = MaterialTheme.typography.titleMedium)
-                    if (isScanning) {
-                        CircularProgressIndicator(modifier = Modifier.size(16.dp), strokeWidth = 2.dp)
-                    }
-                }
-
-                if (nearbyDevices.isEmpty()) {
-                    Text(
-                        text = "No devices found. Make sure other devices are on the same network.",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                } else {
-                    LazyColumn(modifier = Modifier.heightIn(max = 300.dp)) {
-                        items(nearbyDevices.values.toList()) { device ->
-                            ListItem(
-                                headlineContent = { Text(device.alias) },
-                                supportingContent = { Text(device.ip ?: "Unknown IP") },
-                                leadingContent = {
-                                    Icon(
-                                        imageVector = when (device.deviceType.name) {
-                                            "MOBILE" -> Icons.Default.PhoneAndroid
-                                            "DESKTOP" -> Icons.Default.Computer
-                                            else -> Icons.Default.Devices
-                                        },
-                                        contentDescription = null
-                                    )
-                                },
-                                trailingContent = {
-                                    RadioButton(
-                                        selected = selectedDevice?.ip == device.ip,
-                                        onClick = { selectedDevice = device }
-                                    )
-                                },
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .clickable { selectedDevice = device }
-                            )
-                        }
-                    }
-                }
-            }
-        }
-
         Spacer(modifier = Modifier.weight(1f))
-
-        // Send button (manual device selection fallback)
-        Button(
-            onClick = { selectedDevice?.let { device -> viewModel.sendToDevice(device) } },
-            enabled = selectedFiles.isNotEmpty() && selectedDevice != null && !isTransferring,
-            modifier = Modifier.fillMaxWidth().height(56.dp)
-        ) {
-            if (isTransferring) {
-                CircularProgressIndicator(
-                    modifier = Modifier.size(24.dp),
-                    color = MaterialTheme.colorScheme.onPrimary,
-                    strokeWidth = 2.dp
-                )
-                Spacer(modifier = Modifier.width(8.dp))
-                Text("Sending...")
-            } else {
-                Icon(Icons.Default.Send, contentDescription = null)
-                Spacer(modifier = Modifier.width(8.dp))
-                Text("Send")
-            }
-        }
 
         // Transfer progress
         if (transferProgress.isNotEmpty()) {
@@ -242,7 +173,9 @@ fun SendScreen(viewModel: MainViewModel) {
                             Text(
                                 text = state.fileName,
                                 style = MaterialTheme.typography.bodyMedium,
-                                modifier = Modifier.weight(1f)
+                                modifier = Modifier.weight(1f),
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis
                             )
                             Text(
                                 text = "$percent%",
@@ -295,25 +228,25 @@ private fun NfcBeamReadyCard() {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(20.dp),
+                .padding(32.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Icon(
                 imageVector = Icons.Default.Nfc,
                 contentDescription = "NFC",
                 tint = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.size(40.dp)
+                modifier = Modifier.size(64.dp)
             )
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(16.dp))
             Text(
                 text = "Touch to Beam",
-                style = MaterialTheme.typography.titleMedium,
+                style = MaterialTheme.typography.headlineSmall,
                 color = MaterialTheme.colorScheme.onPrimaryContainer,
                 textAlign = TextAlign.Center
             )
             Text(
                 text = "Hold the back of the devices together",
-                style = MaterialTheme.typography.bodySmall,
+                style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onPrimaryContainer,
                 textAlign = TextAlign.Center
             )
@@ -340,7 +273,7 @@ private fun NfcBeamConnectingCard(deviceAlias: String) {
             CircularProgressIndicator(modifier = Modifier.size(24.dp), strokeWidth = 2.dp)
             Column {
                 Text(
-                    text = "Beaming to $deviceAlias…",
+                    text = "Connecting to $deviceAlias…",
                     style = MaterialTheme.typography.titleSmall,
                     color = MaterialTheme.colorScheme.onSecondaryContainer
                 )
