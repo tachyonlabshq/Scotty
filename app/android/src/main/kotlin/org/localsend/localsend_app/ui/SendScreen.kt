@@ -5,6 +5,7 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -16,6 +17,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.scale
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
@@ -336,57 +340,113 @@ private fun BeamingState(
     }
 }
 
-// ── NFC Beam Ready card ───────────────────────────────────────────────
+// ── NFC Beam Ready card — M3 Expressive spring + radial gradient ─────
 @Composable
 private fun NfcBeamReadyCard() {
     val infiniteTransition = rememberInfiniteTransition(label = "nfc_pulse")
-    val scale by infiniteTransition.animateFloat(
-        initialValue = 0.97f, targetValue = 1.03f,
+
+    // Gentle card scale pulse (tween — springs can't be infinite)
+    val pulseScale by infiniteTransition.animateFloat(
+        initialValue = 1f, targetValue = 1.06f,
         animationSpec = infiniteRepeatable(
-            animation = tween(900, easing = FastOutSlowInEasing),
+            animation = tween(1200, easing = FastOutSlowInEasing),
             repeatMode = RepeatMode.Reverse
         ),
         label = "nfc_scale"
     )
-    val alpha by infiniteTransition.animateFloat(
-        initialValue = 0.75f, targetValue = 1.0f,
+
+    // Three staggered ring radii expanding outward
+    val ring1 by infiniteTransition.animateFloat(
+        initialValue = 0f, targetValue = 1f,
         animationSpec = infiniteRepeatable(
-            animation = tween(900, easing = FastOutSlowInEasing),
-            repeatMode = RepeatMode.Reverse
-        ),
-        label = "nfc_alpha"
+            animation = tween(1800, easing = LinearEasing),
+            repeatMode = RepeatMode.Restart
+        ), label = "ring1"
+    )
+    val ring2 by infiniteTransition.animateFloat(
+        initialValue = 0f, targetValue = 1f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(1800, delayMillis = 600, easing = LinearEasing),
+            repeatMode = RepeatMode.Restart
+        ), label = "ring2"
+    )
+    val ring3 by infiniteTransition.animateFloat(
+        initialValue = 0f, targetValue = 1f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(1800, delayMillis = 1200, easing = LinearEasing),
+            repeatMode = RepeatMode.Restart
+        ), label = "ring3"
     )
 
+    val primaryColor = MaterialTheme.colorScheme.primary
+    val containerColor = MaterialTheme.colorScheme.primaryContainer
+    val onContainerColor = MaterialTheme.colorScheme.onPrimaryContainer
+
     Card(
-        modifier = Modifier.fillMaxWidth().scale(scale).alpha(alpha),
+        modifier = Modifier.fillMaxWidth().scale(pulseScale),
         shape = MaterialTheme.shapes.extraLarge,
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
+        colors = CardDefaults.cardColors(containerColor = containerColor)
     ) {
-        Column(
-            modifier = Modifier.fillMaxWidth().padding(32.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(32.dp),
+            contentAlignment = Alignment.Center
         ) {
-            Icon(
-                imageVector = Icons.Default.Nfc,
-                contentDescription = "NFC beam ready, touch devices together",
-                tint = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.size(128.dp)
-            )
-            Spacer(Modifier.height(16.dp))
-            Text(
-                text = "Touch to Beam",
-                style = MaterialTheme.typography.displaySmall,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.onPrimaryContainer,
-                textAlign = TextAlign.Center
-            )
-            Spacer(Modifier.height(8.dp))
-            Text(
-                text = "Hold the back of the devices together",
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onPrimaryContainer,
-                textAlign = TextAlign.Center
-            )
+            // Radial gradient background overlay
+            Canvas(modifier = Modifier.matchParentSize()) {
+                val center = Offset(size.width / 2f, size.height / 2f)
+                val maxRadius = size.minDimension * 0.85f
+                // Radial gradient: primary center → transparent edge
+                drawCircle(
+                    brush = Brush.radialGradient(
+                        colors = listOf(
+                            primaryColor.copy(alpha = 0.15f),
+                            primaryColor.copy(alpha = 0.0f)
+                        ),
+                        center = center,
+                        radius = maxRadius
+                    ),
+                    radius = maxRadius,
+                    center = center
+                )
+                // Three pulsing rings
+                listOf(ring1, ring2, ring3).forEach { progress ->
+                    val radius = maxRadius * 0.3f + maxRadius * 0.7f * progress
+                    val alpha = (1f - progress).coerceIn(0f, 1f) * 0.4f
+                    drawCircle(
+                        color = primaryColor.copy(alpha = alpha),
+                        radius = radius,
+                        center = center,
+                        style = Stroke(width = 3.dp.toPx())
+                    )
+                }
+            }
+
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Nfc,
+                    contentDescription = "NFC beam ready, touch devices together",
+                    tint = primaryColor,
+                    modifier = Modifier.size(128.dp)
+                )
+                Text(
+                    text = "Touch to Beam",
+                    style = MaterialTheme.typography.displaySmall,
+                    fontWeight = FontWeight.Bold,
+                    color = onContainerColor,
+                    textAlign = TextAlign.Center
+                )
+                Text(
+                    text = "Hold the back of the devices together",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = onContainerColor,
+                    textAlign = TextAlign.Center
+                )
+            }
         }
     }
 }
