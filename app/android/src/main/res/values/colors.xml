@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- Scotty brand background — mid teal, used as windowBackground so screencap captures it -->
+    <color name="scotty_background">#FFE0F7FA</color>
+    <color name="scotty_background_dark">#FF0A1D1F</color>
 </resources>

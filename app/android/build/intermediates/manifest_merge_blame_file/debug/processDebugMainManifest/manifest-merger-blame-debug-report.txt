@@ -111,7 +111,7 @@
 60-->[androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
 61
 62    <application
-62-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:38:5-71:19
+62-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:38:5-72:19
 63        android:name="org.localsend.localsend_app.LocalSendApp"
 63-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:39:9-37
 64        android:allowBackup="true"
@@ -133,150 +133,152 @@
 73        android:usesCleartextTraffic="true" >
 73-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:46:9-44
 74        <activity
-74-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:49:9-57:20
+74-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:49:9-58:20
 75            android:name="org.localsend.localsend_app.ui.MainActivity"
 75-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:50:13-44
 76            android:exported="true"
 76-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:51:13-36
-77            android:theme="@style/Theme.LocalSend" >
-77-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:52:13-51
-78            <intent-filter>
-78-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:53:13-56:29
-79                <action android:name="android.intent.action.MAIN" />
-79-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:54:17-69
-79-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:54:25-66
-80
-81                <category android:name="android.intent.category.LAUNCHER" />
-81-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:55:17-77
-81-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:55:27-74
-82            </intent-filter>
-83        </activity>
-84
-85        <service
-85-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:59:9-69:19
-86            android:name="org.localsend.localsend_app.service.NfcHceService"
-86-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:60:13-50
-87            android:exported="true"
-87-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:61:13-36
-88            android:permission="android.permission.BIND_NFC_SERVICE" >
-88-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:62:13-69
-89            <intent-filter>
-89-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:63:13-65:29
-90                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
-90-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:64:17-93
-90-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:64:25-90
-91            </intent-filter>
-92
-93            <meta-data
-93-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:66:13-68:56
-94                android:name="android.nfc.cardemulation.host_apdu_service"
-94-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:67:17-75
-95                android:resource="@xml/apdu_service" />
-95-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:68:17-53
-96        </service>
-97        <service
-97-->[com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:9:9-214
-98            android:name="com.google.android.gms.nearby.exposurenotification.WakeUpService"
-98-->[com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:9:18-97
-99            android:exported="true"
-99-->[com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:9:98-121
-100            android:permission="com.google.android.gms.nearby.exposurenotification.EXPOSURE_CALLBACK" />
-100-->[com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:9:122-211
-101
-102        <activity
-102-->[com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:9-173
-103            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-103-->[com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:19-85
-104            android:exported="false"
-104-->[com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:146-170
-105            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-105-->[com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:86-145
-106
-107        <meta-data
-107-->[com.google.android.gms:play-services-basement:18.4.0] /Users/michaelwong/.gradle/caches/8.12/transforms/492763e5882104dab8bf83d69d4748cd/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
-108            android:name="com.google.android.gms.version"
-108-->[com.google.android.gms:play-services-basement:18.4.0] /Users/michaelwong/.gradle/caches/8.12/transforms/492763e5882104dab8bf83d69d4748cd/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
-109            android:value="@integer/google_play_services_version" />
-109-->[com.google.android.gms:play-services-basement:18.4.0] /Users/michaelwong/.gradle/caches/8.12/transforms/492763e5882104dab8bf83d69d4748cd/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
-110
-111        <activity
-111-->[androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:23:9-25:39
-112            android:name="androidx.activity.ComponentActivity"
-112-->[androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:24:13-63
-113            android:exported="true" />
-113-->[androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:25:13-36
-114        <activity
-114-->[androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:23:9-25:39
-115            android:name="androidx.compose.ui.tooling.PreviewActivity"
-115-->[androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:24:13-71
-116            android:exported="true" />
-116-->[androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:25:13-36
-117
-118        <provider
-118-->[androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-119            android:name="androidx.startup.InitializationProvider"
-119-->[androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:25:13-67
-120            android:authorities="org.localsend.localsend_app.androidx-startup"
-120-->[androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:26:13-68
-121            android:exported="false" >
-121-->[androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:27:13-37
-122            <meta-data
-122-->[androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-123                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-123-->[androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
-124                android:value="androidx.startup" />
-124-->[androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
-125            <meta-data
-125-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:29:13-31:52
-126                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-126-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:30:17-78
-127                android:value="androidx.startup" />
-127-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:31:17-49
-128            <meta-data
-128-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
-129                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-129-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
-130                android:value="androidx.startup" />
-130-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
-131        </provider>
-132
-133        <receiver
-133-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
-134            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-134-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
-135            android:directBootAware="false"
-135-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
-136            android:enabled="true"
-136-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
-137            android:exported="true"
-137-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
-138            android:permission="android.permission.DUMP" >
-138-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
-139            <intent-filter>
-139-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
-140                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-140-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
-140-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
-141            </intent-filter>
-142            <intent-filter>
-142-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
-143                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-143-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
-143-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
-144            </intent-filter>
-145            <intent-filter>
-145-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
-146                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-146-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
-146-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
-147            </intent-filter>
-148            <intent-filter>
-148-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
-149                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-149-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
-149-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
-150            </intent-filter>
-151        </receiver>
-152    </application>
-153
-154</manifest>
+77            android:hardwareAccelerated="false"
+77-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:52:13-48
+78            android:theme="@style/Theme.LocalSend" >
+78-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:53:13-51
+79            <intent-filter>
+79-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:54:13-57:29
+80                <action android:name="android.intent.action.MAIN" />
+80-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:55:17-69
+80-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:55:25-66
+81
+82                <category android:name="android.intent.category.LAUNCHER" />
+82-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:56:17-77
+82-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:56:27-74
+83            </intent-filter>
+84        </activity>
+85
+86        <service
+86-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:60:9-70:19
+87            android:name="org.localsend.localsend_app.service.NfcHceService"
+87-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:61:13-50
+88            android:exported="true"
+88-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:62:13-36
+89            android:permission="android.permission.BIND_NFC_SERVICE" >
+89-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:63:13-69
+90            <intent-filter>
+90-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:64:13-66:29
+91                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
+91-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:65:17-93
+91-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:65:25-90
+92            </intent-filter>
+93
+94            <meta-data
+94-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:67:13-69:56
+95                android:name="android.nfc.cardemulation.host_apdu_service"
+95-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:68:17-75
+96                android:resource="@xml/apdu_service" />
+96-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:69:17-53
+97        </service>
+98        <service
+98-->[com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:9:9-214
+99            android:name="com.google.android.gms.nearby.exposurenotification.WakeUpService"
+99-->[com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:9:18-97
+100            android:exported="true"
+100-->[com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:9:98-121
+101            android:permission="com.google.android.gms.nearby.exposurenotification.EXPOSURE_CALLBACK" />
+101-->[com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:9:122-211
+102
+103        <activity
+103-->[com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+104            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+104-->[com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+105            android:exported="false"
+105-->[com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+106            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+106-->[com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+107
+108        <meta-data
+108-->[com.google.android.gms:play-services-basement:18.4.0] /Users/michaelwong/.gradle/caches/8.12/transforms/492763e5882104dab8bf83d69d4748cd/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
+109            android:name="com.google.android.gms.version"
+109-->[com.google.android.gms:play-services-basement:18.4.0] /Users/michaelwong/.gradle/caches/8.12/transforms/492763e5882104dab8bf83d69d4748cd/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
+110            android:value="@integer/google_play_services_version" />
+110-->[com.google.android.gms:play-services-basement:18.4.0] /Users/michaelwong/.gradle/caches/8.12/transforms/492763e5882104dab8bf83d69d4748cd/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
+111
+112        <activity
+112-->[androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:23:9-25:39
+113            android:name="androidx.activity.ComponentActivity"
+113-->[androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:24:13-63
+114            android:exported="true" />
+114-->[androidx.compose.ui:ui-test-manifest:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/4f868ca04db8c97eaf847f4d9616acb5/transformed/jetified-ui-test-manifest-1.7.6/AndroidManifest.xml:25:13-36
+115        <activity
+115-->[androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:23:9-25:39
+116            android:name="androidx.compose.ui.tooling.PreviewActivity"
+116-->[androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:24:13-71
+117            android:exported="true" />
+117-->[androidx.compose.ui:ui-tooling-android:1.7.6] /Users/michaelwong/.gradle/caches/8.12/transforms/6a6048d39a12722956d37f898cae4450/transformed/jetified-ui-tooling-release/AndroidManifest.xml:25:13-36
+118
+119        <provider
+119-->[androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+120            android:name="androidx.startup.InitializationProvider"
+120-->[androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:25:13-67
+121            android:authorities="org.localsend.localsend_app.androidx-startup"
+121-->[androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:26:13-68
+122            android:exported="false" >
+122-->[androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:27:13-37
+123            <meta-data
+123-->[androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+124                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+124-->[androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
+125                android:value="androidx.startup" />
+125-->[androidx.emoji2:emoji2:1.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/5da3ad1d5f243c5e21da00a73c9358cb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
+126            <meta-data
+126-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:29:13-31:52
+127                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+127-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:30:17-78
+128                android:value="androidx.startup" />
+128-->[androidx.lifecycle:lifecycle-process:2.8.7] /Users/michaelwong/.gradle/caches/8.12/transforms/13a65ed22b5efedb82dc867b590fccf4/transformed/jetified-lifecycle-process-2.8.7/AndroidManifest.xml:31:17-49
+129            <meta-data
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+130                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+131                android:value="androidx.startup" />
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+132        </provider>
+133
+134        <receiver
+134-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+135            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+135-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+136            android:directBootAware="false"
+136-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+137            android:enabled="true"
+137-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+138            android:exported="true"
+138-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+139            android:permission="android.permission.DUMP" >
+139-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+140            <intent-filter>
+140-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+141                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+141-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+141-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+142            </intent-filter>
+143            <intent-filter>
+143-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+144                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+144-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+144-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+145            </intent-filter>
+146            <intent-filter>
+146-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+147                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+147-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+147-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+148            </intent-filter>
+149            <intent-filter>
+149-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+150                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/michaelwong/.gradle/caches/8.12/transforms/8c4c19f34481216adbfd1a72086b52e8/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+151            </intent-filter>
+152        </receiver>
+153    </application>
+154
+155</manifest>

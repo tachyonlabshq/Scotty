@@ -66,6 +66,8 @@ color notification_icon_bg_color
 color purple_200
 color purple_500
 color purple_700
+color scotty_background
+color scotty_background_dark
 color teal_200
 color teal_700
 color vector_tint_color

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:2:1-73:12
-INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:2:1-73:12
-INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:2:1-73:12
-INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:2:1-73:12
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:2:1-74:12
+INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:2:1-74:12
+INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:2:1-74:12
+INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:2:1-74:12
 MERGED from [com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/michaelwong/.gradle/caches/8.12/transforms/57ece66a3ca0df9191594fbdf1bb3793/transformed/jetified-play-services-tasks-18.2.0/AndroidManifest.xml:2:1-5:12
@@ -177,8 +177,8 @@ ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManif
 	android:name
 		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:35:22-75
 application
-ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:38:5-71:19
-INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:38:5-71:19
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:38:5-72:19
+INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:38:5-72:19
 MERGED from [com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:8:5-10:19
 MERGED from [com.google.android.gms:play-services-nearby:19.3.0] /Users/michaelwong/.gradle/caches/8.12/transforms/891ef841fef920d45f808fb14ec37726/transformed/jetified-play-services-nearby-19.3.0/AndroidManifest.xml:8:5-10:19
 MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:4:5-6:19
@@ -226,43 +226,45 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mich
 	android:name
 		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:39:9-37
 activity#org.localsend.localsend_app.ui.MainActivity
-ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:49:9-57:20
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:49:9-58:20
+	android:hardwareAccelerated
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:52:13-48
 	android:exported
 		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:51:13-36
 	android:theme
-		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:52:13-51
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:53:13-51
 	android:name
 		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:50:13-44
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:53:13-56:29
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:54:13-57:29
 action#android.intent.action.MAIN
-ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:54:17-69
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:55:17-69
 	android:name
-		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:54:25-66
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:55:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:55:17-77
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:56:17-77
 	android:name
-		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:55:27-74
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:56:27-74
 service#org.localsend.localsend_app.service.NfcHceService
-ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:59:9-69:19
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:60:9-70:19
 	android:exported
-		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:61:13-36
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:62:13-36
 	android:permission
-		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:62:13-69
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:63:13-69
 	android:name
-		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:60:13-50
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:61:13-50
 intent-filter#action:name:android.nfc.cardemulation.action.HOST_APDU_SERVICE
-ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:63:13-65:29
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:64:13-66:29
 action#android.nfc.cardemulation.action.HOST_APDU_SERVICE
-ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:64:17-93
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:65:17-93
 	android:name
-		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:64:25-90
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:65:25-90
 meta-data#android.nfc.cardemulation.host_apdu_service
-ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:66:13-68:56
+ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:67:13-69:56
 	android:resource
-		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:68:17-53
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:69:17-53
 	android:name
-		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:67:17-75
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:68:17-75
 uses-sdk
 INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml

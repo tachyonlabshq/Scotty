@@ -20,9 +20,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        
+
         setContent {
-            LocalSendTheme {
+            ScottyTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -40,27 +40,22 @@ fun BeamApp(viewModel: MainViewModel = viewModel()) {
     val activity = LocalContext.current as? android.app.Activity
 
     val hasFiles = selectedFiles.isNotEmpty()
-    
-    // Manage NFC Beam State
+
     LaunchedEffect(hasFiles) {
         if (activity != null) {
             if (hasFiles) {
-                // If SENDER (has files), enable NFC beam logic to get Endpoint token and act as NFC Reader
                 viewModel.enableNfcBeam(activity)
             } else {
-                // If RECEIVER (no files), disable reader mode. HCE is still running in background.
                 viewModel.disableNfcBeam(activity)
             }
         }
     }
 
-    // Cleanup on exit
     DisposableEffect(Unit) {
         onDispose {
             if (activity != null) viewModel.disableNfcBeam(activity)
         }
     }
 
-    // Unified Send/Receive Screen
     SendScreen(viewModel = viewModel)
 }

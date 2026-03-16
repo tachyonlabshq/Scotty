@@ -20,10 +20,10 @@
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 1.1 | Rename app to "Scotty" (strings, label, theme) | 🔄 | |
-| 1.2 | Material 3 Expressive theme (spring animations, vibrant palette, M3E tokens) | 🔄 | |
+| 1.1 | Rename app to "Scotty" (strings, label, theme) | ✅ | iter 1 |
+| 1.2 | Material 3 Expressive theme (spring animations, vibrant palette, M3E tokens) | 🔄 | palette done iter 1 |
 | 1.3 | Edge-to-edge scaffold with proper insets | 🔄 | |
-| 1.4 | Dynamic color + fallback palette (teal/cyan Scotty brand) | ⬜ | |
+| 1.4 | Dynamic color + fallback palette (teal/cyan Scotty brand) | ✅ | iter 1 — ScottyDarkColorScheme #0A1D1F bg |
 | 1.5 | Splash / launch screen with beam animation | ⬜ | |
 | 1.6 | Runtime permissions request flow (NFC, Nearby, Storage) | ⬜ | |
 | 1.7 | App icon (adaptive, foreground beam icon) | ⬜ | |
@@ -113,18 +113,18 @@
 
 | Phase | Tasks | Complete | % |
 |-------|-------|----------|---|
-| Phase 1 — Foundation | 7 | 0 | 0% |
+| Phase 1 — Foundation | 7 | 2 | 29% |
 | Phase 2 — Send Screen | 7 | 0 | 0% |
 | Phase 3 — Receive Screen | 4 | 0 | 0% |
 | Phase 4 — Settings Screen | 4 | 0 | 0% |
 | Phase 5 — Polish & A11y | 8 | 0 | 0% |
 | Phase 6 — Bug Fixes | 6 | 0 | 0% |
 | Phase 7 — Full Functionality | 12 | 0 | 0% |
-| **Total** | **48** | **0** | **~0%** |
+| **Total** | **48** | **2** | **~4%** |
 
-> UI/UX polish target (Phases 1–5): **0 / 30 tasks = 0%**
+> UI/UX polish target (Phases 1–5): **2 / 30 tasks = 7%**
 > Backend/functionality (Phases 6–7): **0 / 18 tasks = 0%**
-> Overall project: **0 / 48 tasks = ~0%**
+> Overall project: **2 / 48 tasks = ~4%**
 
 ---
 

@@ -4,9 +4,17 @@
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
+    <color name="scotty_background">#FFE0F7FA</color>
+    <color name="scotty_background_dark">#FF0A1D1F</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
-    <string name="app_name">LocalSend</string>
-    <style name="Theme.LocalSend" parent="android:Theme.Material.Light.NoActionBar"/>
+    <string name="app_name">Scotty</string>
+    <style name="Theme.LocalSend" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/scotty_background</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
 </resources>
