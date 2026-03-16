@@ -7,9 +7,12 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
@@ -20,9 +23,13 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -33,10 +40,11 @@ private enum class SendScreenState { EMPTY, FILES_SELECTED, BEAMING }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SendScreen(viewModel: MainViewModel) {
-    val selectedFiles   by viewModel.selectedFiles.collectAsState()
+fun SendScreen(viewModel: MainViewModel, snackbarHostState: SnackbarHostState) {
+    val selectedFiles    by viewModel.selectedFiles.collectAsState()
     val transferProgress by viewModel.transferProgress.collectAsState()
-    val nfcBeamStatus   by viewModel.nfcBeamStatus.collectAsState()
+    val transferStatus   by viewModel.transferStatus.collectAsState()
+    val nfcBeamStatus    by viewModel.nfcBeamStatus.collectAsState()
     val context = LocalContext.current
 
     val filePickerLauncher = rememberLauncherForActivityResult(
@@ -62,11 +70,30 @@ fun SendScreen(viewModel: MainViewModel) {
         else -> SendScreenState.EMPTY
     }
 
-    // Dismiss errors with snackbar-style auto-clear
+    // Show snackbar on NFC error
     LaunchedEffect(nfcBeamStatus) {
         if (nfcBeamStatus is NfcBeamStatus.Error) {
-            kotlinx.coroutines.delay(3000)
-            viewModel.resetNfcBeamStatus()
+            val msg = (nfcBeamStatus as NfcBeamStatus.Error).message
+            val result = snackbarHostState.showSnackbar(
+                message = "Beam failed: $msg",
+                actionLabel = "Retry",
+                duration = SnackbarDuration.Short
+            )
+            if (result == SnackbarResult.ActionPerformed) {
+                viewModel.resetNfcBeamStatus()
+            } else {
+                viewModel.resetNfcBeamStatus()
+            }
+        }
+    }
+
+    // Show success snackbar
+    LaunchedEffect(transferStatus) {
+        if (transferStatus == org.localsend.localsend_app.service.TransferStatus.SUCCESS) {
+            snackbarHostState.showSnackbar(
+                message = "Beam complete! Files sent successfully.",
+                duration = SnackbarDuration.Short
+            )
         }
     }
 
@@ -87,7 +114,9 @@ fun SendScreen(viewModel: MainViewModel) {
             label = "send_screen_state"
         ) { state ->
             when (state) {
-                SendScreenState.EMPTY         -> EmptyState(onAddFiles = { filePickerLauncher.launch(arrayOf("*/*")) })
+                SendScreenState.EMPTY -> EmptyState(
+                    onAddFiles = { filePickerLauncher.launch(arrayOf("*/*")) }
+                )
                 SendScreenState.FILES_SELECTED -> FilesSelectedState(
                     selectedFiles = selectedFiles,
                     nfcBeamStatus = nfcBeamStatus,
@@ -98,6 +127,7 @@ fun SendScreen(viewModel: MainViewModel) {
                 SendScreenState.BEAMING -> BeamingState(
                     nfcBeamStatus    = nfcBeamStatus,
                     transferProgress = transferProgress,
+                    transferStatus   = transferStatus,
                     onCancel         = { viewModel.clearFiles() }
                 )
             }
@@ -109,8 +139,9 @@ fun SendScreen(viewModel: MainViewModel) {
                 onClick = { filePickerLauncher.launch(arrayOf("*/*")) },
                 modifier = Modifier
                     .align(Alignment.BottomCenter)
-                    .padding(bottom = 24.dp),
-                shape = FloatingActionButtonDefaults.largeShape,
+                    .padding(bottom = 24.dp)
+                    .semantics { contentDescription = "Add files to beam" },
+                shape = MaterialTheme.shapes.extraLarge,
                 containerColor = MaterialTheme.colorScheme.primaryContainer,
                 contentColor   = MaterialTheme.colorScheme.onPrimaryContainer
             ) {
@@ -121,7 +152,7 @@ fun SendScreen(viewModel: MainViewModel) {
                 ) {
                     Icon(
                         Icons.Default.AddCircle,
-                        contentDescription = "Add files to beam",
+                        contentDescription = null,
                         modifier = Modifier.size(28.dp)
                     )
                     AnimatedVisibility(
@@ -148,7 +179,7 @@ private fun EmptyState(onAddFiles: () -> Unit) {
         modifier = Modifier
             .fillMaxSize()
             .padding(32.dp)
-            .padding(bottom = 120.dp), // FAB clearance
+            .padding(bottom = 120.dp),
         contentAlignment = Alignment.Center
     ) {
         Column(
@@ -159,20 +190,22 @@ private fun EmptyState(onAddFiles: () -> Unit) {
                 imageVector = Icons.Default.Nfc,
                 contentDescription = null,
                 modifier = Modifier.size(96.dp),
-                tint = MaterialTheme.colorScheme.primary
+                tint = MaterialTheme.colorScheme.primary.copy(alpha = 0.6f)
             )
             Text(
-                text = "Select files\nto beam",
-                style = MaterialTheme.typography.headlineMedium,
+                text = "Beam Files",
+                style = MaterialTheme.typography.displaySmall,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onBackground,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                modifier = Modifier.semantics { heading() }
             )
             Text(
-                text = "Tap Add Files, then touch\nanother device to transfer",
-                style = MaterialTheme.typography.bodyMedium,
+                text = "Select files then tap devices together",
+                style = MaterialTheme.typography.bodyLarge,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(horizontal = 32.dp)
             )
         }
     }
@@ -191,7 +224,7 @@ private fun FilesSelectedState(
         modifier = Modifier
             .fillMaxSize()
             .padding(horizontal = 16.dp)
-            .padding(top = 8.dp, bottom = 120.dp) // FAB clearance
+            .padding(top = 8.dp, bottom = 120.dp)
     ) {
         // Section header
         Row(
@@ -203,13 +236,19 @@ private fun FilesSelectedState(
                 text = "Beam Files",
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.onBackground
+                color = MaterialTheme.colorScheme.onBackground,
+                modifier = Modifier.semantics { heading() }
             )
             AnimatedVisibility(visible = selectedFiles.isNotEmpty()) {
-                FilledTonalButton(onClick = onClearFiles) {
-                    Icon(Icons.Default.DeleteSweep, contentDescription = null, modifier = Modifier.size(18.dp))
-                    Spacer(Modifier.width(4.dp))
-                    Text("Clear all")
+                IconButton(
+                    onClick = onClearFiles,
+                    modifier = Modifier.semantics { contentDescription = "Clear all files" }
+                ) {
+                    Icon(
+                        Icons.Default.DeleteSweep,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.primary
+                    )
                 }
             }
         }
@@ -218,7 +257,7 @@ private fun FilesSelectedState(
         LazyColumn(
             modifier = Modifier.weight(1f),
             verticalArrangement = Arrangement.spacedBy(8.dp),
-            contentPadding = PaddingValues(bottom = 8.dp)
+            contentPadding = PaddingValues(bottom = 96.dp)
         ) {
             itemsIndexed(
                 items = selectedFiles,
@@ -278,10 +317,15 @@ private fun FilesSelectedState(
                                 )
                             },
                             trailingContent = {
-                                IconButton(onClick = { onRemoveFile(index) }) {
+                                IconButton(
+                                    onClick = { onRemoveFile(index) },
+                                    modifier = Modifier.semantics {
+                                        contentDescription = "Remove $fileName"
+                                    }
+                                ) {
                                     Icon(
                                         Icons.Default.Close,
-                                        contentDescription = "Remove $fileName from beam list"
+                                        contentDescription = null
                                     )
                                 }
                             }
@@ -294,27 +338,8 @@ private fun FilesSelectedState(
         Spacer(Modifier.height(8.dp))
 
         // NFC beam status card
-        when (val s = nfcBeamStatus) {
+        when (nfcBeamStatus) {
             is NfcBeamStatus.Ready, is NfcBeamStatus.Advertising -> NfcBeamReadyCard()
-            is NfcBeamStatus.Error -> {
-                Card(
-                    modifier = Modifier.fillMaxWidth(),
-                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.errorContainer)
-                ) {
-                    Row(
-                        modifier = Modifier.padding(16.dp),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(Icons.Default.Warning, contentDescription = null, tint = MaterialTheme.colorScheme.onErrorContainer)
-                        Text(
-                            text = "Beam failed: ${(s as NfcBeamStatus.Error).message}",
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onErrorContainer
-                        )
-                    }
-                }
-            }
             else -> Unit
         }
     }
@@ -325,8 +350,21 @@ private fun FilesSelectedState(
 private fun BeamingState(
     nfcBeamStatus    : NfcBeamStatus,
     transferProgress : Map<Long, org.localsend.localsend_app.service.ProgressState>,
+    transferStatus   : org.localsend.localsend_app.service.TransferStatus,
     onCancel         : () -> Unit
 ) {
+    val isSuccess = transferStatus == org.localsend.localsend_app.service.TransferStatus.SUCCESS
+
+    // Spring scale for success icon
+    val successScale by animateFloatAsState(
+        targetValue = if (isSuccess) 1f else 0f,
+        animationSpec = spring(
+            dampingRatio = Spring.DampingRatioLowBouncy,
+            stiffness = Spring.StiffnessMedium
+        ),
+        label = "success_scale"
+    )
+
     Box(
         modifier = Modifier.fillMaxSize().padding(32.dp),
         contentAlignment = Alignment.Center
@@ -335,47 +373,86 @@ private fun BeamingState(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            CircularProgressIndicator(
-                modifier = Modifier.size(120.dp),
-                strokeWidth = 8.dp,
-                color = MaterialTheme.colorScheme.primary
-            )
+            if (isSuccess) {
+                Icon(
+                    imageVector = Icons.Default.CheckCircle,
+                    contentDescription = "Transfer complete",
+                    tint = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier
+                        .size(96.dp)
+                        .scale(successScale)
+                )
+            } else {
+                CircularProgressIndicator(
+                    modifier = Modifier.size(120.dp),
+                    strokeWidth = 8.dp,
+                    color = MaterialTheme.colorScheme.primary
+                )
+            }
+
             Text(
-                text = "Beaming…",
+                text = if (isSuccess) "Beam Complete!" else "Beaming…",
                 style = MaterialTheme.typography.headlineMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onBackground
             )
-            transferProgress.values.forEach { state ->
-                val progress = if (state.totalBytes > 0)
-                    (state.transferredBytes.toFloat() / state.totalBytes).coerceIn(0f, 1f) else 0f
-                Column(modifier = Modifier.fillMaxWidth()) {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween
-                    ) {
-                        Text(
-                            text = state.fileName,
-                            style = MaterialTheme.typography.bodyMedium,
-                            modifier = Modifier.weight(1f),
-                            maxLines = 1,
-                            overflow = TextOverflow.Ellipsis
-                        )
-                        Text(
-                            text = "${(progress * 100).toInt()}%",
-                            style = MaterialTheme.typography.bodyMedium
+
+            if (!isSuccess) {
+                transferProgress.values.forEach { state ->
+                    val progress = if (state.totalBytes > 0)
+                        (state.transferredBytes.toFloat() / state.totalBytes).coerceIn(0f, 1f) else 0f
+                    val pct = (progress * 100).toInt()
+                    Column(modifier = Modifier.fillMaxWidth()) {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween
+                        ) {
+                            Text(
+                                text = state.fileName,
+                                style = MaterialTheme.typography.bodyMedium,
+                                modifier = Modifier.weight(1f),
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis
+                            )
+                            Text(
+                                text = "$pct%",
+                                style = MaterialTheme.typography.bodyMedium
+                            )
+                        }
+                        LinearProgressIndicator(
+                            progress = { progress },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(top = 4.dp)
+                                .semantics {
+                                    contentDescription =
+                                        "Transferring ${state.fileName}, $pct percent complete"
+                                }
                         )
                     }
-                    LinearProgressIndicator(
-                        progress = { progress },
-                        modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
-                    )
                 }
             }
-            FilledTonalButton(onClick = onCancel) {
-                Icon(Icons.Default.Close, contentDescription = null, modifier = Modifier.size(18.dp))
-                Spacer(Modifier.width(4.dp))
-                Text("Cancel")
+
+            if (isSuccess) {
+                Text(
+                    text = "Files sent successfully",
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    textAlign = TextAlign.Center
+                )
+                FilledTonalButton(onClick = onCancel) {
+                    Text("Done")
+                }
+            } else {
+                FilledTonalButton(onClick = onCancel) {
+                    Icon(
+                        Icons.Default.Close,
+                        contentDescription = null,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(Modifier.width(4.dp))
+                    Text("Cancel")
+                }
             }
         }
     }
@@ -386,7 +463,6 @@ private fun BeamingState(
 private fun NfcBeamReadyCard() {
     val infiniteTransition = rememberInfiniteTransition(label = "nfc_pulse")
 
-    // Gentle card scale pulse (tween — springs can't be infinite)
     val pulseScale by infiniteTransition.animateFloat(
         initialValue = 1f, targetValue = 1.06f,
         animationSpec = infiniteRepeatable(
@@ -396,7 +472,6 @@ private fun NfcBeamReadyCard() {
         label = "nfc_scale"
     )
 
-    // Three staggered ring radii expanding outward
     val ring1 by infiniteTransition.animateFloat(
         initialValue = 0f, targetValue = 1f,
         animationSpec = infiniteRepeatable(
@@ -419,26 +494,32 @@ private fun NfcBeamReadyCard() {
         ), label = "ring3"
     )
 
-    val primaryColor = MaterialTheme.colorScheme.primary
-    val containerColor = MaterialTheme.colorScheme.primaryContainer
+    val primaryColor    = MaterialTheme.colorScheme.primary
+    val containerColor  = MaterialTheme.colorScheme.primaryContainer
     val onContainerColor = MaterialTheme.colorScheme.onPrimaryContainer
 
+    val isDark = isSystemInDarkTheme()
+    val gradientColors = if (isDark) {
+        listOf(containerColor, MaterialTheme.colorScheme.surfaceContainerHigh)
+    } else {
+        listOf(containerColor, MaterialTheme.colorScheme.background)
+    }
+
     Card(
-        modifier = Modifier.fillMaxWidth().scale(pulseScale),
+        modifier = Modifier
+            .fillMaxWidth()
+            .scale(pulseScale)
+            .semantics { contentDescription = "NFC beam ready — hold devices together" },
         shape = MaterialTheme.shapes.extraLarge,
         colors = CardDefaults.cardColors(containerColor = containerColor)
     ) {
         Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(32.dp),
+            modifier = Modifier.fillMaxWidth().padding(32.dp),
             contentAlignment = Alignment.Center
         ) {
-            // Radial gradient background overlay
             Canvas(modifier = Modifier.matchParentSize()) {
                 val center = Offset(size.width / 2f, size.height / 2f)
                 val maxRadius = size.minDimension * 0.85f
-                // Radial gradient: primary center → transparent edge
                 drawCircle(
                     brush = Brush.radialGradient(
                         colors = listOf(
@@ -451,7 +532,6 @@ private fun NfcBeamReadyCard() {
                     radius = maxRadius,
                     center = center
                 )
-                // Three pulsing rings
                 listOf(ring1, ring2, ring3).forEach { progress ->
                     val radius = maxRadius * 0.3f + maxRadius * 0.7f * progress
                     val alpha = (1f - progress).coerceIn(0f, 1f) * 0.4f
@@ -470,7 +550,7 @@ private fun NfcBeamReadyCard() {
             ) {
                 Icon(
                     imageVector = Icons.Default.Nfc,
-                    contentDescription = "NFC beam ready, touch devices together",
+                    contentDescription = null,
                     tint = primaryColor,
                     modifier = Modifier.size(128.dp)
                 )
@@ -499,6 +579,7 @@ private fun fileTypeIcon(fileName: String): ImageVector {
         ext in listOf("jpg","jpeg","png","gif","webp","heic","bmp") -> Icons.Default.Image
         ext in listOf("mp4","mov","avi","mkv","webm")               -> Icons.Default.Videocam
         ext in listOf("mp3","aac","wav","flac","ogg","m4a")         -> Icons.Default.AudioFile
+        ext.contains("pdf")                                         -> Icons.Default.Info
         else                                                         -> Icons.Default.InsertDriveFile
     }
 }

@@ -1,45 +1,116 @@
 package org.localsend.localsend_app.ui
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.Code
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Nfc
+import androidx.compose.material.icons.filled.OpenInNew
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen(viewModel: MainViewModel) {
-    Box(
+    val settings by viewModel.settings.collectAsState()
+    var darkMode by remember { mutableStateOf(false) }
+
+    Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(24.dp),
-        contentAlignment = Alignment.Center
+            .verticalScroll(rememberScrollState())
     ) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
-            Icon(
-                imageVector = Icons.Default.Settings,
-                contentDescription = null,
-                tint = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.size(64.dp)
-            )
-            Text(
-                text = "Settings",
-                style = MaterialTheme.typography.headlineMedium,
-                color = MaterialTheme.colorScheme.onBackground,
-                textAlign = TextAlign.Center
-            )
-            Text(
-                text = "Coming in iteration 10",
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                textAlign = TextAlign.Center
-            )
-        }
+        // ── DEVICE section ────────────────────────────────────────────
+        SectionHeader("Device")
+
+        ListItem(
+            headlineContent = { Text("Device Name") },
+            supportingContent = {
+                OutlinedTextField(
+                    value = settings.alias,
+                    onValueChange = { viewModel.updateAlias(it) },
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(12.dp),
+                    singleLine = true,
+                    label = { Text("Alias") }
+                )
+            }
+        )
+
+        ListItem(
+            headlineContent = { Text("Model") },
+            trailingContent = {
+                Text(
+                    settings.deviceModel,
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+        )
+
+        HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+
+        // ── APPEARANCE section ────────────────────────────────────────
+        SectionHeader("Appearance")
+
+        ListItem(
+            headlineContent = { Text("Dark Mode") },
+            supportingContent = { Text("Override system theme") },
+            trailingContent = {
+                Switch(
+                    checked = darkMode,
+                    onCheckedChange = { darkMode = it }
+                )
+            }
+        )
+
+        HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+
+        // ── ABOUT section ─────────────────────────────────────────────
+        SectionHeader("About")
+
+        ListItem(
+            headlineContent = { Text("Scotty") },
+            supportingContent = { Text("Version 1.0.0") },
+            leadingContent = {
+                Icon(Icons.Default.Info, contentDescription = null)
+            }
+        )
+
+        ListItem(
+            headlineContent = { Text("Built with") },
+            supportingContent = { Text("NFC + Google Nearby Connections") },
+            leadingContent = {
+                Icon(Icons.Default.Nfc, contentDescription = null)
+            }
+        )
+
+        ListItem(
+            headlineContent = { Text("GitHub") },
+            supportingContent = { Text("View source code") },
+            leadingContent = {
+                Icon(Icons.Default.Code, contentDescription = null)
+            },
+            trailingContent = {
+                Icon(Icons.Default.OpenInNew, contentDescription = "Open in browser")
+            }
+        )
+
+        Spacer(modifier = Modifier.height(88.dp))
     }
+}
+
+@Composable
+private fun SectionHeader(title: String) {
+    Text(
+        text = title.uppercase(),
+        style = MaterialTheme.typography.labelLarge,
+        color = MaterialTheme.colorScheme.primary,
+        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
+    )
 }

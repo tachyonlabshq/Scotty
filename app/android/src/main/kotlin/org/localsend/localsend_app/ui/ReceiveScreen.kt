@@ -14,6 +14,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -59,7 +62,7 @@ fun ReceiveScreen(viewModel: MainViewModel) {
             Canvas(
                 modifier = Modifier
                     .fillMaxSize()
-                    .clearAndSetSemantics {}
+                    .semantics { contentDescription = "Radar pulse animation" }
             ) {
                 val center = Offset(size.width / 2f, size.height / 2f)
                 val maxRadius = size.minDimension / 2f
@@ -87,7 +90,7 @@ fun ReceiveScreen(viewModel: MainViewModel) {
                 Box(contentAlignment = Alignment.Center) {
                     Icon(
                         imageVector = Icons.Default.Nfc,
-                        contentDescription = "Ready to receive via NFC",
+                        contentDescription = "NFC ready to receive",
                         tint = MaterialTheme.colorScheme.primary,
                         modifier = Modifier.size(52.dp)
                     )
@@ -102,7 +105,8 @@ fun ReceiveScreen(viewModel: MainViewModel) {
             style = MaterialTheme.typography.displaySmall,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.onBackground,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            modifier = Modifier.semantics { heading() }
         )
 
         Spacer(Modifier.height(8.dp))
