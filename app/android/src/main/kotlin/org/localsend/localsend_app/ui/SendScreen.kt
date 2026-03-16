@@ -1,6 +1,7 @@
 package org.localsend.localsend_app.ui
 
 import android.net.Uri
+import android.provider.OpenableColumns
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.*
@@ -42,11 +43,12 @@ fun SendScreen(viewModel: MainViewModel) {
         contract = ActivityResultContracts.OpenMultipleDocuments()
     ) { uris: List<Uri> ->
         val files = uris.map { uri ->
-            val fileName = context.contentResolver.query(uri, null, null, null, null)
-                ?.use { cursor ->
-                    val idx = cursor.getColumnIndex(android.provider.OpenableColumns.DISPLAY_NAME)
-                    cursor.moveToFirst(); cursor.getString(idx)
-                } ?: "Unknown"
+            val fileName = context.contentResolver.query(
+                uri, arrayOf(OpenableColumns.DISPLAY_NAME, OpenableColumns.SIZE), null, null, null
+            )?.use { cursor ->
+                cursor.moveToFirst()
+                cursor.getString(cursor.getColumnIndexOrThrow(OpenableColumns.DISPLAY_NAME))
+            } ?: "Unknown"
             uri to fileName
         }
         viewModel.addFiles(files)
@@ -212,40 +214,79 @@ private fun FilesSelectedState(
             }
         }
 
-        // File list
+        // File list with animated placement
         LazyColumn(
             modifier = Modifier.weight(1f),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            contentPadding = PaddingValues(bottom = 8.dp)
         ) {
-            itemsIndexed(selectedFiles) { index, (_, fileName) ->
-                ElevatedCard(
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = MaterialTheme.shapes.medium
-                ) {
-                    ListItem(
-                        headlineContent = {
-                            Text(
-                                text = fileName,
-                                maxLines = 1,
-                                overflow = TextOverflow.Ellipsis
-                            )
-                        },
-                        leadingContent = {
-                            Icon(
-                                imageVector = fileTypeIcon(fileName),
-                                contentDescription = null,
-                                tint = MaterialTheme.colorScheme.primary
-                            )
-                        },
-                        trailingContent = {
-                            IconButton(onClick = { onRemoveFile(index) }) {
-                                Icon(
-                                    Icons.Default.Close,
-                                    contentDescription = "Remove $fileName from beam list"
-                                )
-                            }
-                        }
+            itemsIndexed(
+                items = selectedFiles,
+                key   = { _, pair -> pair.first.toString() }
+            ) { index, (uri, fileName) ->
+                val context = LocalContext.current
+                val fileSize = remember(uri) {
+                    context.contentResolver.query(
+                        uri, arrayOf(OpenableColumns.SIZE), null, null, null
+                    )?.use { c ->
+                        c.moveToFirst()
+                        val col = c.getColumnIndex(OpenableColumns.SIZE)
+                        if (col >= 0) c.getLong(col) else -1L
+                    } ?: -1L
+                }
+                val sizeLabel = when {
+                    fileSize < 0             -> ""
+                    fileSize < 1024          -> "$fileSize B"
+                    fileSize < 1024 * 1024   -> "${fileSize / 1024} KB"
+                    else                     -> "${fileSize / (1024 * 1024)} MB"
+                }
+
+                AnimatedVisibility(
+                    visible = true,
+                    enter = slideInVertically(
+                        animationSpec = spring(dampingRatio = Spring.DampingRatioMediumBouncy)
+                    ) { it / 2 } + fadeIn(),
+                    exit  = slideOutHorizontally(spring()) + fadeOut(),
+                    modifier = Modifier.animateItem(
+                        placementSpec = spring(dampingRatio = Spring.DampingRatioMediumBouncy)
                     )
+                ) {
+                    ElevatedCard(
+                        modifier = Modifier.fillMaxWidth(),
+                        shape    = MaterialTheme.shapes.medium
+                    ) {
+                        ListItem(
+                            headlineContent = {
+                                Text(
+                                    text = fileName,
+                                    maxLines = 1,
+                                    overflow = TextOverflow.Ellipsis
+                                )
+                            },
+                            supportingContent = if (sizeLabel.isNotEmpty()) ({
+                                Text(
+                                    text = sizeLabel,
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }) else null,
+                            leadingContent = {
+                                Icon(
+                                    imageVector = fileTypeIcon(fileName),
+                                    contentDescription = null,
+                                    tint = MaterialTheme.colorScheme.primary
+                                )
+                            },
+                            trailingContent = {
+                                IconButton(onClick = { onRemoveFile(index) }) {
+                                    Icon(
+                                        Icons.Default.Close,
+                                        contentDescription = "Remove $fileName from beam list"
+                                    )
+                                }
+                            }
+                        )
+                    }
                 }
             }
         }
