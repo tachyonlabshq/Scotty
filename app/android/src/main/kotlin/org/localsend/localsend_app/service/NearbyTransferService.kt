@@ -54,6 +54,11 @@ class NearbyTransferService(private val context: Context) {
     private val _receivedFiles = MutableStateFlow<List<ReceivedFile>>(emptyList())
     val receivedFiles: StateFlow<List<ReceivedFile>> = _receivedFiles.asStateFlow()
 
+    data class ConnectionRequest(val endpointId: String, val deviceName: String)
+
+    private val _pendingConnectionRequest = MutableStateFlow<ConnectionRequest?>(null)
+    val pendingConnectionRequest: StateFlow<ConnectionRequest?> = _pendingConnectionRequest.asStateFlow()
+
     private val _errorMessage = MutableStateFlow<String?>(null)
     val errorMessage: StateFlow<String?> = _errorMessage.asStateFlow()
 
@@ -72,12 +77,17 @@ class NearbyTransferService(private val context: Context) {
     /** Use this callback for the overall connection lifecycle */
     private val connectionLifecycleCallback = object : ConnectionLifecycleCallback() {
         override fun onConnectionInitiated(endpointId: String, info: ConnectionInfo) {
-            // Strip the token suffix (name||token) to get the human-readable device name
             val displayName = info.endpointName.substringBefore("||").ifEmpty { info.endpointName }
-            Log.d(TAG, "Connection initiated with: $endpointId ($displayName). Auto-accepting.")
+            Log.d(TAG, "Connection initiated with: $endpointId ($displayName).")
             _connectedEndpointName.value = displayName
             _status.value = TransferStatus.CONNECTING
-            connectionsClient.acceptConnection(endpointId, payloadCallback)
+            if (pendingUris.isNotEmpty()) {
+                // Sender role: auto-accept
+                connectionsClient.acceptConnection(endpointId, payloadCallback)
+            } else {
+                // Receiver role: show dialog
+                _pendingConnectionRequest.value = ConnectionRequest(endpointId, displayName)
+            }
         }
 
         override fun onConnectionResult(endpointId: String, result: ConnectionResolution) {
@@ -325,6 +335,17 @@ class NearbyTransferService(private val context: Context) {
         _errorMessage.value = msg
         _status.value = TransferStatus.ERROR
         stopAll()
+    }
+
+    fun acceptIncomingConnection(endpointId: String) {
+        _pendingConnectionRequest.value = null
+        connectionsClient.acceptConnection(endpointId, payloadCallback)
+    }
+
+    fun rejectIncomingConnection(endpointId: String) {
+        _pendingConnectionRequest.value = null
+        connectionsClient.rejectConnection(endpointId)
+        _status.value = TransferStatus.IDLE
     }
 
     fun clearError() {

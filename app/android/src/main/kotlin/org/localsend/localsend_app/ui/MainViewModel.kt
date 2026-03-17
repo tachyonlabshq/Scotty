@@ -54,6 +54,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val transferProgress = nearbyTransferService.transferProgress
     val transferError = nearbyTransferService.errorMessage
 
+    val pendingConnectionRequest = nearbyTransferService.pendingConnectionRequest
+
     // Merged: history from DataStore + live files from this session
     private val _receivedFiles = MutableStateFlow<List<org.localsend.localsend_app.service.ReceivedFile>>(emptyList())
     val receivedFiles: StateFlow<List<org.localsend.localsend_app.service.ReceivedFile>> = _receivedFiles.asStateFlow()
@@ -298,6 +300,15 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         } catch (e: Exception) {
             "Android Device"
         }
+    }
+
+    fun acceptConnection(endpointId: String) {
+        nearbyTransferService.acceptIncomingConnection(endpointId)
+    }
+
+    fun rejectConnection(endpointId: String) {
+        nearbyTransferService.rejectIncomingConnection(endpointId)
+        _nfcBeamStatus.value = NfcBeamStatus.Idle
     }
 
     fun clearReceivedHistory() {

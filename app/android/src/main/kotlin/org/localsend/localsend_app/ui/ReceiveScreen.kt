@@ -47,8 +47,35 @@ fun ReceiveScreen(viewModel: MainViewModel) {
     val settings by viewModel.settings.collectAsState()
     val nfcBeamStatus by viewModel.nfcBeamStatus.collectAsState()
     val receivedFiles by viewModel.receivedFiles.collectAsState()
+    val pendingRequest by viewModel.pendingConnectionRequest.collectAsState()
     val primaryColor = MaterialTheme.colorScheme.primary
     val context = LocalContext.current
+
+    // Accept/reject dialog
+    pendingRequest?.let { request ->
+        AlertDialog(
+            onDismissRequest = { viewModel.rejectConnection(request.endpointId) },
+            icon = { Icon(Icons.Default.Nfc, contentDescription = null) },
+            title = { Text("Incoming Transfer") },
+            text = {
+                Text(
+                    text = "Accept files from \"${request.deviceName}\"?",
+                    style = MaterialTheme.typography.bodyLarge
+                )
+            },
+            confirmButton = {
+                Button(onClick = { viewModel.acceptConnection(request.endpointId) }) {
+                    Text("Accept")
+                }
+            },
+            dismissButton = {
+                OutlinedButton(onClick = { viewModel.rejectConnection(request.endpointId) }) {
+                    Text("Reject")
+                }
+            },
+            shape = MaterialTheme.shapes.extraLarge
+        )
+    }
 
     // 4 staggered radar rings
     val transitions = (0..3).map { i ->
