@@ -77,16 +77,16 @@ fun ReceiveScreen(viewModel: MainViewModel) {
         )
     }
 
-    // 4 staggered radar rings
-    val transitions = (0..3).map { i ->
+    // 5 staggered radar rings
+    val transitions = (0..4).map { i ->
         val t = rememberInfiniteTransition(label = "ring_$i")
         t.animateFloat(
             initialValue = 0f,
             targetValue  = 1f,
             animationSpec = infiniteRepeatable(
                 animation = tween(
-                    durationMillis = 2400,
-                    delayMillis    = i * 600,
+                    durationMillis = 2600,
+                    delayMillis    = i * 520,
                     easing         = LinearEasing
                 ),
                 repeatMode = RepeatMode.Restart
@@ -98,12 +98,23 @@ fun ReceiveScreen(viewModel: MainViewModel) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
+            .statusBarsPadding()
             .padding(horizontal = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         contentPadding = PaddingValues(bottom = 120.dp)
     ) {
         item {
-            Spacer(Modifier.height(24.dp))
+            Spacer(Modifier.height(16.dp))
+
+            Text(
+                text = "Receive",
+                style = MaterialTheme.typography.headlineLarge,
+                fontWeight = FontWeight.Black,
+                color = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            Spacer(Modifier.height(16.dp))
 
             // Radar + NFC icon composite — 300dp dominant element
             Box(
@@ -120,7 +131,7 @@ fun ReceiveScreen(viewModel: MainViewModel) {
                     transitions.forEach { progress ->
                         val p = progress.value
                         val radius = maxRadius * 0.25f + maxRadius * 0.75f * p
-                        val alpha  = (1f - p).coerceIn(0f, 1f) * 0.5f
+                        val alpha  = (1f - p).coerceIn(0f, 1f) * 0.6f
                         drawCircle(
                             color  = primaryColor.copy(alpha = alpha),
                             radius = radius,

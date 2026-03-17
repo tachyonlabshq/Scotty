@@ -11,8 +11,10 @@ import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
+import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkVertically
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.animation.togetherWith
@@ -20,6 +22,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -27,6 +30,7 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CallReceived
@@ -280,7 +284,7 @@ private fun TabItem(
         label = "tab_bg"
     )
 
-    Box(
+    Column(
         modifier = Modifier
             .scale(scale)
             .clip(MaterialTheme.shapes.large)
@@ -288,9 +292,10 @@ private fun TabItem(
                 MaterialTheme.colorScheme.primaryContainer.copy(alpha = containerAlpha)
             )
             .clickable(onClick = onClick)
-            .padding(horizontal = 20.dp, vertical = 12.dp)
+            .padding(horizontal = 16.dp, vertical = 10.dp)
             .semantics { contentDescription = "$label tab${if (selected) ", selected" else ""}" },
-        contentAlignment = Alignment.Center
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(2.dp)
     ) {
         BadgedBox(badge = {
             if (badge > 0) Badge { Text(badge.toString()) }
@@ -299,7 +304,20 @@ private fun TabItem(
                 imageVector = icon,
                 contentDescription = null,
                 tint = if (selected) MaterialTheme.colorScheme.onPrimaryContainer
-                       else MaterialTheme.colorScheme.onSurfaceVariant
+                       else MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.size(22.dp)
+            )
+        }
+        AnimatedVisibility(
+            visible = selected,
+            enter = fadeIn(spring()) + expandVertically(spring()),
+            exit  = fadeOut(spring()) + shrinkVertically(spring())
+        ) {
+            Text(
+                text = label,
+                style = MaterialTheme.typography.labelSmall,
+                fontWeight = FontWeight.SemiBold,
+                color = MaterialTheme.colorScheme.onPrimaryContainer
             )
         }
     }

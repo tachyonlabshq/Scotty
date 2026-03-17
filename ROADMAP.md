@@ -3,7 +3,7 @@
 **Project:** Scotty — tap-to-transfer file sharing using NFC + Google Nearby Connections
 **Stack:** Kotlin · Jetpack Compose · Material 3 Expressive · Google Nearby API
 **Package:** `org.localsend.localsend_app` → target rename: `app.scotty`
-**Last updated:** 2026-03-16 (after iter 40)
+**Last updated:** 2026-03-17 (after iter 49)
 
 ---
 
@@ -109,6 +109,22 @@
 
 ---
 
+## Phase 8 — UI Polish (Iterations 41–49)
+> M3 Expressive redesigns, edge-to-edge insets, motion refinement
+
+| # | Task | Status | Notes |
+|---|------|--------|-------|
+| 8.1 | Settings redesign — hero identity card + grouped ElevatedCard sections | ✅ | iter 41 — avatar initials, AssistChip model, FilledTonalButton GitHub |
+| 8.2 | Edge-to-edge statusBarsPadding on all screens | ✅ | iter 42 — SendScreen, ReceiveScreen, PermissionsScreen |
+| 8.3 | FloatingToolbar animated labels appear on selected tab | ✅ | iter 43 — AnimatedVisibility expandVertically spring |
+| 8.4 | SendScreen persistent "Scotty" wordmark header | ✅ | iter 44 — headlineLarge Black primary, AnimatedContent padded top 96dp |
+| 8.5 | ReceiveScreen header + 5 radar rings, 0.6 alpha | ✅ | iter 45 — "Receive" headlineLarge Black, ring count 4→5 |
+| 8.6 | Light mode color tuning — near-white teal-tinted background | ✅ | iter 46 — background 0xFFF5FDFF, surfaceContainer toned down |
+| 8.7 | NfcBeamReadyCard — stable card, pulsing icon only, 4 rings @ 2200ms | ✅ | iter 47 — removed card scale jitter, icon pulse + CircleShape Surface |
+| 8.8 | PermissionsScreen M3 Expressive redesign — concentric hero + FAB | ✅ | iter 48 — AssistChip list, ExtendedFAB, static concentric rings |
+
+---
+
 ## Completion Estimate
 
 | Phase | Tasks | Complete | % |
@@ -120,12 +136,13 @@
 | Phase 5 — Polish & A11y | 8 | 7 | 88% |
 | Phase 6 — Bug Fixes | 6 | 6 | 100% |
 | Phase 7 — Full Functionality | 12 | 0 | 0% |
-| **Total** | **48** | **35** | **~73%** |
+| Phase 8 — UI Polish | 8 | 8 | 100% |
+| **Total** | **56** | **43** | **~77%** |
 
-> UI/UX polish target (Phases 1–5): **29 / 30 tasks = 97%**
+> UI/UX polish target (Phases 1–5, 8): **37 / 38 tasks = 97%**
 > Bug fixes (Phase 6): **6 / 6 tasks = 100%**
 > Backend/functionality (Phase 7): **0 / 12 tasks = 0%**
-> Overall project: **35 / 48 tasks = ~73%**
+> Overall project: **43 / 56 tasks = ~77%**
 
 ---
 
@@ -138,15 +155,16 @@
 | Iter 11–15 | Receive screen: radar rings, M3 typography, shapes, semantics |
 | Iter 16–20 | Polish: EmptyState, edge-to-edge, spring transitions, regression |
 | Iter 21–40 | Bug fixes, DataStore, permissions, received files, history, dialog, icon, splash, tests, animations |
+| Iter 41–49 | UI Polish: Settings hero card, statusBarsPadding, toolbar labels, wordmark headers, light mode colors, NFC card stability, Permissions M3E |
 
-**Iteration 21–40 complete — 2026-03-16**
+**Iteration 41–49 complete — 2026-03-17**
 
 ---
 
 ## Source Audit Summary (2026-03-16)
 **Total lines:** ~1,800 across 12 Kotlin files (grew from 1,182 with new screens)
 **Backend readiness:** NearbyTransferService ~90%, NfcHceService ~95%, NfcReaderManager ~95%
-**UI readiness (post iters 21–40):** SendScreen ✅, ReceiveScreen ✅, SettingsScreen ✅, NavigationBar ✅, PermissionsScreen ✅
+**UI readiness (post iters 41–49):** SendScreen ✅, ReceiveScreen ✅, SettingsScreen ✅, NavigationBar ✅, PermissionsScreen ✅
 
 ### Screenshot Verification Note
 Screenshot methods return pure white on P9P_XL_Emulator (Apple Silicon + MoltenVK GPU buffer capture issue).

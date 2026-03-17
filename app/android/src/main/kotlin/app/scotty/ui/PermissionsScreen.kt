@@ -7,15 +7,22 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Bluetooth
+import androidx.compose.material.icons.filled.Folder
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Nfc
-import androidx.compose.material.icons.filled.WifiTethering
+import androidx.compose.material.icons.filled.Wifi
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
@@ -83,82 +90,121 @@ private fun PermissionsRationaleScreen(
     showDeniedMessage: Boolean,
     onRequestPermissions: () -> Unit
 ) {
-    Column(
+    val primaryColor = MaterialTheme.colorScheme.primary
+
+    Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(32.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+            .statusBarsPadding()
+            .navigationBarsPadding()
     ) {
-        Icon(
-            imageVector = Icons.Default.Nfc,
-            contentDescription = null,
-            modifier = Modifier.size(80.dp),
-            tint = MaterialTheme.colorScheme.primary
-        )
-
-        Spacer(Modifier.height(24.dp))
-
-        Text(
-            text = "Permissions Required",
-            style = MaterialTheme.typography.headlineMedium,
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.onBackground,
-            textAlign = TextAlign.Center
-        )
-
-        Spacer(Modifier.height(12.dp))
-
-        Text(
-            text = "Scotty needs Bluetooth and Wi-Fi permissions to discover nearby devices and transfer files.",
-            style = MaterialTheme.typography.bodyLarge,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            textAlign = TextAlign.Center
-        )
-
-        Spacer(Modifier.height(32.dp))
-
-        // Permission bullets
-        PermissionBullet(
-            icon = Icons.Default.WifiTethering,
-            title = "Nearby Connections",
-            description = "Find and connect to nearby devices via Bluetooth & Wi-Fi"
-        )
-        Spacer(Modifier.height(12.dp))
-        PermissionBullet(
-            icon = Icons.Default.Lock,
-            title = "Storage Access",
-            description = "Read files from your device to send"
-        )
-
-        Spacer(Modifier.height(32.dp))
-
-        AnimatedVisibility(visible = showDeniedMessage, enter = fadeIn(), exit = fadeOut()) {
-            Card(
-                modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.errorContainer
-                ),
-                shape = MaterialTheme.shapes.large
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 28.dp)
+                .padding(bottom = 100.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            // Concentric ring hero with NFC icon — static decorative rings
+            Box(
+                modifier = Modifier.size(220.dp),
+                contentAlignment = Alignment.Center
             ) {
-                Text(
-                    text = "Some permissions were denied. Scotty needs these to work. Please grant them.",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onErrorContainer,
-                    modifier = Modifier.padding(16.dp),
-                    textAlign = TextAlign.Center
-                )
+                Canvas(modifier = Modifier.fillMaxSize()) {
+                    val center = Offset(size.width / 2f, size.height / 2f)
+                    val maxR = size.minDimension / 2f
+                    listOf(0.35f, 0.57f, 0.78f, 1.0f).forEachIndexed { i, frac ->
+                        drawCircle(
+                            color = primaryColor.copy(alpha = 0.10f - i * 0.02f),
+                            radius = maxR * frac,
+                            center = center,
+                            style = Stroke(width = (2f - i * 0.3f).dp.toPx())
+                        )
+                    }
+                }
+                Surface(
+                    shape = CircleShape,
+                    color = MaterialTheme.colorScheme.primaryContainer,
+                    tonalElevation = 6.dp,
+                    modifier = Modifier.size(96.dp)
+                ) {
+                    Box(contentAlignment = Alignment.Center) {
+                        Icon(
+                            imageVector = Icons.Default.Nfc,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.onPrimaryContainer,
+                            modifier = Modifier.size(52.dp)
+                        )
+                    }
+                }
+            }
+
+            Spacer(Modifier.height(28.dp))
+
+            Text(
+                text = "Scotty needs your permission",
+                style = MaterialTheme.typography.headlineLarge,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onBackground,
+                textAlign = TextAlign.Center
+            )
+
+            Spacer(Modifier.height(12.dp))
+
+            Text(
+                text = "Nearby, Bluetooth, and storage access are needed for NFC file transfer",
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = TextAlign.Center
+            )
+
+            Spacer(Modifier.height(28.dp))
+
+            // Permission chip list
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                PermissionChipRow(Icons.Default.Bluetooth, "Bluetooth Scan & Connect")
+                PermissionChipRow(Icons.Default.Wifi, "Nearby Wi-Fi Devices")
+                PermissionChipRow(Icons.Default.LocationOn, "Location (for Nearby discovery)")
+                PermissionChipRow(Icons.Default.Folder, "Storage / Media Access")
+            }
+
+            Spacer(Modifier.height(20.dp))
+
+            AnimatedVisibility(visible = showDeniedMessage, enter = fadeIn(), exit = fadeOut()) {
+                Card(
+                    modifier = Modifier.fillMaxWidth().padding(bottom = 12.dp),
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.errorContainer
+                    ),
+                    shape = MaterialTheme.shapes.large
+                ) {
+                    Text(
+                        text = "Some permissions were denied. Scotty needs these to work.",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onErrorContainer,
+                        modifier = Modifier.padding(16.dp),
+                        textAlign = TextAlign.Center
+                    )
+                }
             }
         }
 
-        Button(
+        // Floating grant button above nav bar
+        ExtendedFloatingActionButton(
             onClick = onRequestPermissions,
             modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .padding(bottom = 28.dp)
                 .fillMaxWidth()
-                .height(56.dp)
+                .padding(horizontal = 28.dp)
                 .semantics { contentDescription = "Grant required permissions" },
+            containerColor = MaterialTheme.colorScheme.primary,
+            contentColor = MaterialTheme.colorScheme.onPrimary,
             shape = MaterialTheme.shapes.extraLarge
         ) {
+            Icon(Icons.Default.Nfc, contentDescription = null)
+            Spacer(Modifier.width(12.dp))
             Text(
                 text = "Grant Permissions",
                 style = MaterialTheme.typography.titleMedium,
@@ -169,39 +215,21 @@ private fun PermissionsRationaleScreen(
 }
 
 @Composable
-private fun PermissionBullet(
+private fun PermissionChipRow(
     icon: androidx.compose.ui.graphics.vector.ImageVector,
-    title: String,
-    description: String
+    label: String
 ) {
-    ElevatedCard(
-        modifier = Modifier.fillMaxWidth(),
-        shape = MaterialTheme.shapes.large
-    ) {
-        Row(
-            modifier = Modifier.padding(16.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Icon(
-                imageVector = icon,
-                contentDescription = null,
-                tint = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.size(32.dp)
+    AssistChip(
+        onClick = {},
+        label = {
+            Text(
+                text = label,
+                style = MaterialTheme.typography.bodyMedium
             )
-            Column {
-                Text(
-                    text = title,
-                    style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.SemiBold,
-                    color = MaterialTheme.colorScheme.onSurface
-                )
-                Text(
-                    text = description,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-            }
-        }
-    }
+        },
+        leadingIcon = {
+            Icon(icon, contentDescription = null, modifier = Modifier.size(18.dp))
+        },
+        modifier = Modifier.fillMaxWidth()
+    )
 }

@@ -97,8 +97,29 @@ fun SendScreen(viewModel: MainViewModel, snackbarHostState: SnackbarHostState) {
         }
     }
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier.fillMaxSize().statusBarsPadding()) {
+        // Persistent wordmark header
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .align(Alignment.TopStart)
+                .padding(start = 24.dp, end = 24.dp, top = 16.dp)
+        ) {
+            Text(
+                text = "Scotty",
+                style = MaterialTheme.typography.headlineLarge,
+                fontWeight = FontWeight.Black,
+                color = MaterialTheme.colorScheme.primary
+            )
+            Text(
+                text = "Beam files with a tap",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
+
         AnimatedContent(
+            modifier = Modifier.padding(top = 96.dp),
             targetState = screenState,
             transitionSpec = {
                 (slideInVertically(
@@ -557,40 +578,48 @@ private fun BeamingState(
     }
 }
 
-// ── NFC Beam Ready card — M3 Expressive spring + radial gradient ─────
+// ── NFC Beam Ready card — M3 Expressive, stable card + pulsing icon ──
 @Composable
 private fun NfcBeamReadyCard() {
     val infiniteTransition = rememberInfiniteTransition(label = "nfc_pulse")
 
-    val pulseScale by infiniteTransition.animateFloat(
-        initialValue = 1f, targetValue = 1.06f,
+    // Pulse only on icon — card stays stable (no layout jitter)
+    val iconPulseScale by infiniteTransition.animateFloat(
+        initialValue = 1f, targetValue = 1.12f,
         animationSpec = infiniteRepeatable(
-            animation = tween(1200, easing = FastOutSlowInEasing),
+            animation = tween(1400, easing = FastOutSlowInEasing),
             repeatMode = RepeatMode.Reverse
         ),
-        label = "nfc_scale"
+        label = "icon_pulse"
     )
 
     val ring1 by infiniteTransition.animateFloat(
         initialValue = 0f, targetValue = 1f,
         animationSpec = infiniteRepeatable(
-            animation = tween(1800, easing = LinearEasing),
+            animation = tween(2200, easing = LinearEasing),
             repeatMode = RepeatMode.Restart
         ), label = "ring1"
     )
     val ring2 by infiniteTransition.animateFloat(
         initialValue = 0f, targetValue = 1f,
         animationSpec = infiniteRepeatable(
-            animation = tween(1800, delayMillis = 600, easing = LinearEasing),
+            animation = tween(2200, delayMillis = 550, easing = LinearEasing),
             repeatMode = RepeatMode.Restart
         ), label = "ring2"
     )
     val ring3 by infiniteTransition.animateFloat(
         initialValue = 0f, targetValue = 1f,
         animationSpec = infiniteRepeatable(
-            animation = tween(1800, delayMillis = 1200, easing = LinearEasing),
+            animation = tween(2200, delayMillis = 1100, easing = LinearEasing),
             repeatMode = RepeatMode.Restart
         ), label = "ring3"
+    )
+    val ring4 by infiniteTransition.animateFloat(
+        initialValue = 0f, targetValue = 1f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(2200, delayMillis = 1650, easing = LinearEasing),
+            repeatMode = RepeatMode.Restart
+        ), label = "ring4"
     )
 
     val primaryColor     = MaterialTheme.colorScheme.primary
@@ -600,7 +629,6 @@ private fun NfcBeamReadyCard() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .scale(pulseScale)
             .semantics { contentDescription = "NFC beam ready — hold devices together" },
         shape = MaterialTheme.shapes.extraLarge,
         colors = CardDefaults.cardColors(containerColor = containerColor)
@@ -624,7 +652,7 @@ private fun NfcBeamReadyCard() {
                     radius = maxRadius,
                     center = center
                 )
-                listOf(ring1, ring2, ring3).forEach { progress ->
+                listOf(ring1, ring2, ring3, ring4).forEach { progress ->
                     val radius = maxRadius * 0.3f + maxRadius * 0.7f * progress
                     val alpha = (1f - progress).coerceIn(0f, 1f) * 0.4f
                     drawCircle(
@@ -640,12 +668,23 @@ private fun NfcBeamReadyCard() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                Icon(
-                    imageVector = Icons.Default.Nfc,
-                    contentDescription = null,
-                    tint = primaryColor,
-                    modifier = Modifier.size(128.dp)
-                )
+                Surface(
+                    shape = androidx.compose.foundation.shape.CircleShape,
+                    color = containerColor,
+                    tonalElevation = 0.dp,
+                    modifier = Modifier.size(140.dp)
+                ) {
+                    Box(contentAlignment = Alignment.Center) {
+                        Icon(
+                            imageVector = Icons.Default.Nfc,
+                            contentDescription = null,
+                            tint = primaryColor,
+                            modifier = Modifier
+                                .size(96.dp)
+                                .scale(iconPulseScale)
+                        )
+                    }
+                }
                 Text(
                     text = "Touch to Beam",
                     style = MaterialTheme.typography.displaySmall,
