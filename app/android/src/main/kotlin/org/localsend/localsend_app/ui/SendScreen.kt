@@ -354,6 +354,7 @@ private fun BeamingState(
     onCancel         : () -> Unit
 ) {
     val isSuccess = transferStatus == org.localsend.localsend_app.service.TransferStatus.SUCCESS
+    val primaryColor = MaterialTheme.colorScheme.primary
 
     // Spring scale for success icon
     val successScale by animateFloatAsState(
@@ -363,6 +364,40 @@ private fun BeamingState(
             stiffness = Spring.StiffnessMedium
         ),
         label = "success_scale"
+    )
+
+    // Infinite pulse scale for NFC icon during beaming
+    val beamInfinite = rememberInfiniteTransition(label = "beam_pulse")
+    val pulseScale by beamInfinite.animateFloat(
+        initialValue = 1f,
+        targetValue = 1.15f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(900, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "beam_icon_scale"
+    )
+    // 3 radiating rings
+    val ring1 by beamInfinite.animateFloat(
+        initialValue = 0f, targetValue = 1f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(1600, easing = LinearEasing),
+            repeatMode = RepeatMode.Restart
+        ), label = "beam_ring1"
+    )
+    val ring2 by beamInfinite.animateFloat(
+        initialValue = 0f, targetValue = 1f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(1600, delayMillis = 533, easing = LinearEasing),
+            repeatMode = RepeatMode.Restart
+        ), label = "beam_ring2"
+    )
+    val ring3 by beamInfinite.animateFloat(
+        initialValue = 0f, targetValue = 1f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(1600, delayMillis = 1066, easing = LinearEasing),
+            repeatMode = RepeatMode.Restart
+        ), label = "beam_ring3"
     )
 
     Box(
@@ -377,17 +412,40 @@ private fun BeamingState(
                 Icon(
                     imageVector = Icons.Default.CheckCircle,
                     contentDescription = "Transfer complete",
-                    tint = MaterialTheme.colorScheme.primary,
+                    tint = primaryColor,
                     modifier = Modifier
                         .size(96.dp)
                         .scale(successScale)
                 )
             } else {
-                CircularProgressIndicator(
-                    modifier = Modifier.size(120.dp),
-                    strokeWidth = 8.dp,
-                    color = MaterialTheme.colorScheme.primary
-                )
+                // Pulsing NFC icon with radiating rings
+                Box(
+                    modifier = Modifier.size(200.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Canvas(modifier = Modifier.fillMaxSize()) {
+                        val center = Offset(size.width / 2f, size.height / 2f)
+                        val maxRadius = size.minDimension / 2f
+                        listOf(ring1, ring2, ring3).forEach { p ->
+                            val radius = maxRadius * 0.3f + maxRadius * 0.7f * p
+                            val alpha = (1f - p).coerceIn(0f, 1f) * 0.45f
+                            drawCircle(
+                                color = primaryColor.copy(alpha = alpha),
+                                radius = radius,
+                                center = center,
+                                style = Stroke(width = 3.dp.toPx())
+                            )
+                        }
+                    }
+                    Icon(
+                        imageVector = Icons.Default.Nfc,
+                        contentDescription = "Beaming files",
+                        tint = primaryColor,
+                        modifier = Modifier
+                            .size(80.dp)
+                            .scale(pulseScale)
+                    )
+                }
             }
 
             Text(
