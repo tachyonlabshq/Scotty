@@ -15,22 +15,6 @@
                     }
                 }
             ]
-        },
-        {
-            "outputFile": "/Users/michaelwong/.gradle/daemon/8.12/org.localsend.localsend_app-mergeDebugResources-60:/values-night-v8/values-night-v8.xml",
-            "map": [
-                {
-                    "source": "/Users/michaelwong/Developer/Scotty/app/android/src/main/res/values-night/themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "352"
-                    }
-                }
-            ]
         }
     ]
 }

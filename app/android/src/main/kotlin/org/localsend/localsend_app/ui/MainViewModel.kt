@@ -4,6 +4,12 @@ import android.app.Activity
 import android.app.Application
 import android.net.Uri
 import android.os.Build
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.booleanPreferencesKey
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.*
@@ -14,6 +20,7 @@ import org.localsend.localsend_app.service.NfcBeamMessage
 import org.localsend.localsend_app.service.NfcMessageHub
 import org.localsend.localsend_app.service.NfcReaderManager
 import org.localsend.localsend_app.service.TransferStatus
+import java.util.UUID
 
 sealed class NfcBeamStatus {
     object Idle : NfcBeamStatus()
@@ -27,7 +34,17 @@ sealed class NfcBeamStatus {
     data class Error(val message: String) : NfcBeamStatus()
 }
 
+private val android.content.Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "scotty_settings")
+
 class MainViewModel(application: Application) : AndroidViewModel(application) {
+
+    companion object {
+        val ALIAS_KEY       = stringPreferencesKey("alias")
+        val DARK_MODE_KEY   = booleanPreferencesKey("dark_mode")
+        val FINGERPRINT_KEY = stringPreferencesKey("fingerprint")
+    }
+
+    private val dataStore = application.dataStore
 
     private val nearbyTransferService = NearbyTransferService(application)
 
@@ -48,6 +65,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     ))
     val settings: StateFlow<AppSettings> = _settings.asStateFlow()
 
+    private val _isDarkMode = MutableStateFlow(false)
+    val isDarkMode: StateFlow<Boolean> = _isDarkMode.asStateFlow()
+
     private val _quickSave = MutableStateFlow(false)
     val quickSave: StateFlow<Boolean> = _quickSave.asStateFlow()
 
@@ -55,6 +75,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val nfcBeamStatus: StateFlow<NfcBeamStatus> = _nfcBeamStatus.asStateFlow()
 
     val nfcReaderManager = NfcReaderManager(
+        scope = viewModelScope,
         onBeamSent = {
             viewModelScope.launch {
                 _nfcBeamStatus.value = NfcBeamStatus.Connecting("Target Device")
@@ -69,6 +90,27 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     )
 
     init {
+        // Load persisted settings from DataStore
+        viewModelScope.launch {
+            dataStore.data.collect { prefs ->
+                val savedAlias = prefs[ALIAS_KEY]
+                val savedDarkMode = prefs[DARK_MODE_KEY] ?: false
+                var savedFingerprint = prefs[FINGERPRINT_KEY] ?: ""
+
+                // Generate fingerprint on first run
+                if (savedFingerprint.isEmpty()) {
+                    savedFingerprint = UUID.randomUUID().toString()
+                    dataStore.edit { it[FINGERPRINT_KEY] = savedFingerprint }
+                }
+
+                _settings.value = _settings.value.copy(
+                    alias = savedAlias ?: getDeviceName(),
+                    fingerprint = savedFingerprint
+                )
+                _isDarkMode.value = savedDarkMode
+            }
+        }
+
         // Observers for state events
         viewModelScope.launch {
             NfcMessageHub.incomingMessages.collect { msg ->
@@ -125,9 +167,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         val uris = _selectedFiles.value.map { it.first }
         nearbyTransferService.startAdvertisingForSend(uris, _settings.value.alias) { endpointToken ->
             _nfcBeamStatus.value = NfcBeamStatus.Advertising(endpointToken)
-            
+
             // Now that we have the endpoint token, we can ACTIVATE reader mode.
-            // When the SENDER (us) taps the RECEIVER, the NfcReaderManager will send this message.
             val message = NfcBeamMessage(
                 action = "discover",
                 targetEndpoint = endpointToken,
@@ -150,41 +191,51 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _nfcBeamStatus.value = NfcBeamStatus.Idle
         nearbyTransferService.clearError()
     }
-    
+
     fun selectTab(index: Int) {
         _selectedTab.value = index
     }
-    
+
     fun addFiles(files: List<Pair<Uri, String>>) {
         _selectedFiles.value = _selectedFiles.value + files
     }
-    
+
     fun removeFile(index: Int) {
         _selectedFiles.value = _selectedFiles.value.toMutableList().apply {
             if (index in indices) removeAt(index)
         }
     }
-    
+
     fun clearFiles() {
         _selectedFiles.value = emptyList()
     }
-    
+
     fun toggleQuickSave() {
         _quickSave.value = !_quickSave.value
     }
-    
+
     fun updateAlias(alias: String) {
         _settings.value = _settings.value.copy(alias = alias)
+        viewModelScope.launch {
+            dataStore.edit { prefs -> prefs[ALIAS_KEY] = alias }
+        }
     }
-    
+
+    fun updateDarkMode(dark: Boolean) {
+        _isDarkMode.value = dark
+        viewModelScope.launch {
+            dataStore.edit { prefs -> prefs[DARK_MODE_KEY] = dark }
+        }
+    }
+
     fun updatePort(port: Int) {
         _settings.value = _settings.value.copy(port = port)
     }
-    
+
     fun updateTheme(theme: String) {
         _settings.value = _settings.value.copy(theme = theme)
     }
-    
+
     private fun getDeviceName(): String {
         return try {
             val manufacturer = Build.MANUFACTURER
@@ -198,7 +249,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             "Android Device"
         }
     }
-    
+
     override fun onCleared() {
         super.onCleared()
         nearbyTransferService.stopAll()

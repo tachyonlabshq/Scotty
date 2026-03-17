@@ -11,6 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class NfcReaderManager(
+    private val scope: CoroutineScope,
     private val onBeamSent: () -> Unit,
     private val onError: (String) -> Unit
 ) : NfcAdapter.ReaderCallback {
@@ -22,7 +23,7 @@ class NfcReaderManager(
             0x00, 0xA4.toByte(), 0x04, 0x00, 0x07,
             0xF0.toByte(), 0x39, 0x41, 0x48, 0x14, 0x81.toByte(), 0x00
         )
-        
+
         // Custom APDU instruction for payload delivery
         private val DELIVER_PAYLOAD_HEADER = byteArrayOf(0x80.toByte(), 0x01, 0x00, 0x00)
     }
@@ -57,13 +58,13 @@ class NfcReaderManager(
             onError("NFC tag does not support IsoDep")
             return
         }
-        
+
         val messageToSend = pendingMessage ?: run {
             Log.w(TAG, "Tag discovered but no pending message to send")
             return
         }
 
-        CoroutineScope(Dispatchers.IO).launch {
+        scope.launch(Dispatchers.IO) {
             try {
                 isoDep.connect()
                 isoDep.timeout = 5000
@@ -74,7 +75,7 @@ class NfcReaderManager(
                     onError("NFC Select failed")
                     return@launch
                 }
-                
+
                 // 2. Transmit Payload
                 val jsonBytes = gson.toJson(messageToSend).toByteArray(Charsets.UTF_8)
                 val payloadApdu = ByteArray(5 + jsonBytes.size)
@@ -84,7 +85,7 @@ class NfcReaderManager(
 
                 Log.d(TAG, "Sending Payload APDU...")
                 val payloadResponse = isoDep.transceive(payloadApdu)
-                
+
                 if (isSuccess(payloadResponse)) {
                     Log.d(TAG, "Payload sent successfully!")
                     onBeamSent()
@@ -100,7 +101,7 @@ class NfcReaderManager(
             }
         }
     }
-    
+
     private fun isSuccess(response: ByteArray): Boolean {
         if (response.size < 2) return false
         val sw1 = response[response.size - 2]
