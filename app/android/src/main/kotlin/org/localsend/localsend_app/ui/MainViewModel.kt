@@ -39,9 +39,11 @@ private val android.content.Context.dataStore: DataStore<Preferences> by prefere
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     companion object {
-        val ALIAS_KEY       = stringPreferencesKey("alias")
-        val DARK_MODE_KEY   = booleanPreferencesKey("dark_mode")
-        val FINGERPRINT_KEY = stringPreferencesKey("fingerprint")
+        val ALIAS_KEY        = stringPreferencesKey("alias")
+        val DARK_MODE_KEY    = booleanPreferencesKey("dark_mode")
+        val FINGERPRINT_KEY  = stringPreferencesKey("fingerprint")
+        val HISTORY_KEY      = stringPreferencesKey("received_history")
+        private const val HISTORY_SEP = "\u001F" // unit separator
     }
 
     private val dataStore = application.dataStore
@@ -51,7 +53,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val transferStatus = nearbyTransferService.status
     val transferProgress = nearbyTransferService.transferProgress
     val transferError = nearbyTransferService.errorMessage
-    val receivedFiles = nearbyTransferService.receivedFiles
+
+    // Merged: history from DataStore + live files from this session
+    private val _receivedFiles = MutableStateFlow<List<org.localsend.localsend_app.service.ReceivedFile>>(emptyList())
+    val receivedFiles: StateFlow<List<org.localsend.localsend_app.service.ReceivedFile>> = _receivedFiles.asStateFlow()
 
     private val _selectedTab = MutableStateFlow(0)
     val selectedTab: StateFlow<Int> = _selectedTab.asStateFlow()
@@ -119,6 +124,40 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                     fingerprint = savedFingerprint
                 )
                 _isDarkMode.value = savedDarkMode
+
+                // Load received file history (newline-separated "name|path|size|mime|ts")
+                val historyRaw = prefs[HISTORY_KEY] ?: ""
+                if (historyRaw.isNotEmpty()) {
+                    val historical = historyRaw.split(HISTORY_SEP).mapNotNull { line ->
+                        val parts = line.split("|")
+                        if (parts.size >= 5) {
+                            org.localsend.localsend_app.service.ReceivedFile(
+                                fileName     = parts[0],
+                                filePath     = parts[1],
+                                sizeBytes    = parts[2].toLongOrNull() ?: 0L,
+                                mimeType     = parts[3],
+                                receivedAtMs = parts[4].toLongOrNull() ?: 0L
+                            )
+                        } else null
+                    }
+                    // Merge: historical first, then any live session files already in _receivedFiles
+                    _receivedFiles.value = (historical + _receivedFiles.value)
+                        .distinctBy { it.receivedAtMs }
+                        .sortedByDescending { it.receivedAtMs }
+                }
+            }
+        }
+
+        // Observe new files from NearbyTransferService and persist them
+        viewModelScope.launch {
+            nearbyTransferService.receivedFiles.collect { serviceFiles ->
+                val current = _receivedFiles.value
+                val newFiles = serviceFiles.filter { sf -> current.none { it.receivedAtMs == sf.receivedAtMs } }
+                if (newFiles.isNotEmpty()) {
+                    val merged = (newFiles + current).sortedByDescending { it.receivedAtMs }
+                    _receivedFiles.value = merged
+                    persistHistory(merged)
+                }
             }
         }
 
@@ -258,6 +297,22 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             }
         } catch (e: Exception) {
             "Android Device"
+        }
+    }
+
+    fun clearReceivedHistory() {
+        _receivedFiles.value = emptyList()
+        viewModelScope.launch {
+            dataStore.edit { it.remove(HISTORY_KEY) }
+        }
+    }
+
+    private fun persistHistory(files: List<org.localsend.localsend_app.service.ReceivedFile>) {
+        viewModelScope.launch {
+            val encoded = files.joinToString(HISTORY_SEP) { f ->
+                "${f.fileName}|${f.filePath}|${f.sizeBytes}|${f.mimeType}|${f.receivedAtMs}"
+            }
+            dataStore.edit { it[HISTORY_KEY] = encoded }
         }
     }
 

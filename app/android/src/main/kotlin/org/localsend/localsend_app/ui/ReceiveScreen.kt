@@ -13,7 +13,17 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.filled.AudioFile
+import androidx.compose.material.icons.filled.DeleteSweep
+import androidx.compose.material.icons.filled.Image
+import androidx.compose.material.icons.filled.Inbox
+import androidx.compose.material.icons.filled.InsertDriveFile
+import androidx.compose.material.icons.filled.Nfc
+import androidx.compose.material.icons.filled.OpenInNew
+import androidx.compose.material.icons.filled.PhoneAndroid
+import androidx.compose.material.icons.filled.PictureAsPdf
+import androidx.compose.material.icons.filled.Share
+import androidx.compose.material.icons.filled.Videocam
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -192,11 +202,18 @@ fun ReceiveScreen(viewModel: MainViewModel) {
                             color = MaterialTheme.colorScheme.onBackground,
                             modifier = Modifier.semantics { heading() }
                         )
-                        Text(
-                            text = "${receivedFiles.size}",
-                            style = MaterialTheme.typography.labelLarge,
-                            color = MaterialTheme.colorScheme.primary
-                        )
+                        TextButton(
+                            onClick = { viewModel.clearReceivedHistory() },
+                            modifier = Modifier.semantics { contentDescription = "Clear received file history" }
+                        ) {
+                            Icon(
+                                Icons.Default.DeleteSweep,
+                                contentDescription = null,
+                                modifier = Modifier.size(16.dp)
+                            )
+                            Spacer(Modifier.width(4.dp))
+                            Text("Clear", style = MaterialTheme.typography.labelLarge)
+                        }
                     }
                     Spacer(Modifier.height(8.dp))
                 }
