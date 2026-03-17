@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 
 class NfcReaderManager(
     private val scope: CoroutineScope,
+    private val onReaderEnabled: () -> Unit = {},
     private val onBeamSent: () -> Unit,
     private val onError: (String) -> Unit
 ) : NfcAdapter.ReaderCallback {
@@ -45,6 +46,7 @@ class NfcReaderManager(
             null
         )
         Log.d(TAG, "NFC reader mode enabled with pending message: $message")
+        onReaderEnabled()
     }
 
     fun disable(activity: Activity) {

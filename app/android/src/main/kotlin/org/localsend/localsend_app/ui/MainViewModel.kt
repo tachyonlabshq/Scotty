@@ -76,6 +76,14 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     val nfcReaderManager = NfcReaderManager(
         scope = viewModelScope,
+        onReaderEnabled = {
+            // Emit Ready when NFC reader mode is successfully activated
+            viewModelScope.launch {
+                if (_nfcBeamStatus.value !is NfcBeamStatus.Advertising) {
+                    _nfcBeamStatus.value = NfcBeamStatus.Ready
+                }
+            }
+        },
         onBeamSent = {
             viewModelScope.launch {
                 _nfcBeamStatus.value = NfcBeamStatus.Connecting("Target Device")
