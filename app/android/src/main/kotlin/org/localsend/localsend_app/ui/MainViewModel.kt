@@ -86,7 +86,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         },
         onBeamSent = {
             viewModelScope.launch {
-                _nfcBeamStatus.value = NfcBeamStatus.Connecting("Target Device")
+                val deviceName = nearbyTransferService.connectedEndpointName.value
+                    ?: "Device"
+                _nfcBeamStatus.value = NfcBeamStatus.Connecting(deviceName)
             }
         },
         onError = { error ->

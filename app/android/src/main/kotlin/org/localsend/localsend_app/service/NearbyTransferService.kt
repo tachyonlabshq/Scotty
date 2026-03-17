@@ -40,6 +40,9 @@ class NearbyTransferService(private val context: Context) {
     private val _status = MutableStateFlow(TransferStatus.IDLE)
     val status: StateFlow<TransferStatus> = _status.asStateFlow()
 
+    private val _connectedEndpointName = MutableStateFlow<String?>(null)
+    val connectedEndpointName: StateFlow<String?> = _connectedEndpointName.asStateFlow()
+
     private val _errorMessage = MutableStateFlow<String?>(null)
     val errorMessage: StateFlow<String?> = _errorMessage.asStateFlow()
 
@@ -58,7 +61,10 @@ class NearbyTransferService(private val context: Context) {
     /** Use this callback for the overall connection lifecycle */
     private val connectionLifecycleCallback = object : ConnectionLifecycleCallback() {
         override fun onConnectionInitiated(endpointId: String, info: ConnectionInfo) {
-            Log.d(TAG, "Connection initiated with: $endpointId (${info.endpointName}). Auto-accepting.")
+            // Strip the token suffix (name||token) to get the human-readable device name
+            val displayName = info.endpointName.substringBefore("||").ifEmpty { info.endpointName }
+            Log.d(TAG, "Connection initiated with: $endpointId ($displayName). Auto-accepting.")
+            _connectedEndpointName.value = displayName
             _status.value = TransferStatus.CONNECTING
             connectionsClient.acceptConnection(endpointId, payloadCallback)
         }
