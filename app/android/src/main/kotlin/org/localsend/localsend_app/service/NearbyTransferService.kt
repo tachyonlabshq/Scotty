@@ -28,6 +28,14 @@ data class ProgressState(
     val totalBytes: Long
 )
 
+data class ReceivedFile(
+    val fileName: String,
+    val filePath: String,
+    val sizeBytes: Long,
+    val mimeType: String = "*/*",
+    val receivedAtMs: Long = System.currentTimeMillis()
+)
+
 class NearbyTransferService(private val context: Context) {
     companion object {
         private const val TAG = "NearbyTransferService"
@@ -42,6 +50,9 @@ class NearbyTransferService(private val context: Context) {
 
     private val _connectedEndpointName = MutableStateFlow<String?>(null)
     val connectedEndpointName: StateFlow<String?> = _connectedEndpointName.asStateFlow()
+
+    private val _receivedFiles = MutableStateFlow<List<ReceivedFile>>(emptyList())
+    val receivedFiles: StateFlow<List<ReceivedFile>> = _receivedFiles.asStateFlow()
 
     private val _errorMessage = MutableStateFlow<String?>(null)
     val errorMessage: StateFlow<String?> = _errorMessage.asStateFlow()
@@ -142,6 +153,15 @@ class NearbyTransferService(private val context: Context) {
                             totalBytes = update.totalBytes
                         )
                         _transferProgress.value = currentState
+                        // Record in received files list if we are the receiver
+                        if (pendingUris.isEmpty()) {
+                            val received = ReceivedFile(
+                                fileName = existing.fileName,
+                                filePath = existing.fileName,
+                                sizeBytes = update.totalBytes
+                            )
+                            _receivedFiles.value = _receivedFiles.value + received
+                        }
                         checkIfAllTransfersComplete()
                     }
                     PayloadTransferUpdate.Status.FAILURE, PayloadTransferUpdate.Status.CANCELED -> {

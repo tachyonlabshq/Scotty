@@ -51,6 +51,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val transferStatus = nearbyTransferService.status
     val transferProgress = nearbyTransferService.transferProgress
     val transferError = nearbyTransferService.errorMessage
+    val receivedFiles = nearbyTransferService.receivedFiles
 
     private val _selectedTab = MutableStateFlow(0)
     val selectedTab: StateFlow<Int> = _selectedTab.asStateFlow()
