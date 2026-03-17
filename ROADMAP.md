@@ -3,7 +3,7 @@
 **Project:** Scotty — tap-to-transfer file sharing using NFC + Google Nearby Connections
 **Stack:** Kotlin · Jetpack Compose · Material 3 Expressive · Google Nearby API
 **Package:** `org.localsend.localsend_app` → target rename: `app.scotty`
-**Last updated:** 2026-03-16
+**Last updated:** 2026-03-16 (after iter 40)
 
 ---
 
@@ -24,9 +24,9 @@
 | 1.2 | Material 3 Expressive theme (spring animations, vibrant palette, M3E tokens) | ✅ | ScottyTypography + ScottyShapes iter 11–12 |
 | 1.3 | Edge-to-edge scaffold with proper insets | ✅ | WindowInsets(0,0,0,0) iter 17 |
 | 1.4 | Dynamic color + fallback palette (teal/cyan Scotty brand) | ✅ | iter 1 — ScottyDarkColorScheme #0A1D1F bg |
-| 1.5 | Splash / launch screen with beam animation | ⬜ | |
-| 1.6 | Runtime permissions request flow (NFC, Nearby, Storage) | ⬜ | |
-| 1.7 | App icon (adaptive, foreground beam icon) | ⬜ | |
+| 1.5 | Splash / launch screen with beam animation | ✅ | iter 34 — core-splashscreen:1.0.1, dark teal bg, beam icon |
+| 1.6 | Runtime permissions request flow (NFC, Nearby, Storage) | ✅ | iter 28 — PermissionGate composable |
+| 1.7 | App icon (adaptive, foreground beam icon) | ✅ | iter 33 — NFC arc waves + lightning bolt in teal |
 
 ## Phase 2 — Send Screen Polish (Iterations 6–10)
 > The primary beam/send flow — file selection → tap → transfer
@@ -47,9 +47,9 @@
 | # | Task | Status | Notes |
 |---|------|--------|-------|
 | 3.1 | Receive screen with animated "Ready to receive" indicator | ✅ | Radar rings iter 6 |
-| 3.2 | Incoming transfer accept/reject dialog | ⬜ | |
-| 3.3 | Received files list with share/open actions | ⬜ | |
-| 3.4 | Transfer history persistence (DataStore) | ⬜ | |
+| 3.2 | Incoming transfer accept/reject dialog | ✅ | iter 30 — AlertDialog, ConnectionRequest StateFlow |
+| 3.3 | Received files list with share/open actions | ✅ | iter 27/31 — ReceivedFileCard, extraLarge shape, badges |
+| 3.4 | Transfer history persistence (DataStore) | ✅ | iter 29 — unit-sep encoded, clearHistory() |
 
 ## Phase 4 — Settings Screen (Iterations 14–15)
 > Device name, preferences, about
@@ -58,8 +58,8 @@
 |---|------|--------|-------|
 | 4.1 | Settings screen with M3 grouped lists | ✅ | iter 9 |
 | 4.2 | Device alias editor | ✅ | OutlinedTextField bound to viewModel iter 9 |
-| 4.3 | Theme toggle (System/Light/Dark) | ✅ | Dark Mode switch iter 9 |
-| 4.4 | About section with version, licenses link | ✅ | iter 9 |
+| 4.3 | Theme toggle (System/Light/Dark) | ✅ | Dark Mode switch iter 9; hoisted to ScottyTheme iter 23 |
+| 4.4 | About section with version, licenses link | ✅ | iter 39 — expandable ElevatedCard + GitHub link |
 
 ## Phase 5 — Polish & Accessibility (Iterations 16–20)
 > Animations, a11y, performance, final QA
@@ -72,8 +72,8 @@
 | 5.4 | Dark theme audit and contrast check | ✅ | surfaceContainerHigh/Low/Mid iter 14 |
 | 5.5 | Large text / font scale testing | 🔄 | Deferred — requires physical device |
 | 5.6 | Bottom navigation bar (Send / Receive / Settings) | ✅ | NavigationBar iter 2 |
-| 5.7 | Regression test: build + install + full flow end-to-end | ✅ | iter 20 — all tabs verified via ui dump |
-| 5.8 | ProGuard/R8 rules review | ⬜ | |
+| 5.7 | Regression test: build + install + full flow end-to-end | ✅ | iter 40 — all 3 tabs verified via ui dump |
+| 5.8 | ProGuard/R8 rules review | ✅ | iter 32 — Nearby, DataStore, NFC, coroutines |
 
 ---
 
@@ -82,12 +82,12 @@
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 6.1 | Wire AppSettings to DataStore (alias/settings reset every launch) | ⬜ | DataStore dep exists but unused |
-| 6.2 | Fix CoroutineScope leak in NfcReaderManager (unscoped IO scope) | ⬜ | Must tie to lifecycle |
-| 6.3 | Emit `NfcBeamStatus.Ready` state (currently defined but never set) | ⬜ | Dead state in sealed class |
-| 6.4 | Replace hardcoded `"Target Device"` with real discovered endpoint name | ⬜ | In MainViewModel Connecting state |
-| 6.5 | Surface received file path to user (no UI for received files) | ⬜ | NearbyTransferService saves but UI ignores |
-| 6.6 | Generate/persist device fingerprint (defaults to empty string) | ⬜ | AppSettings.fingerprint = "" |
+| 6.1 | Wire AppSettings to DataStore (alias/settings reset every launch) | ✅ | iter 21 — alias, dark mode, fingerprint all persisted |
+| 6.2 | Fix CoroutineScope leak in NfcReaderManager (unscoped IO scope) | ✅ | iter 21 — viewModelScope passed to NfcReaderManager |
+| 6.3 | Emit `NfcBeamStatus.Ready` state (currently defined but never set) | ✅ | iter 25 — onReaderEnabled callback emits Ready |
+| 6.4 | Replace hardcoded `"Target Device"` with real discovered endpoint name | ✅ | iter 26 — connectedEndpointName StateFlow in service |
+| 6.5 | Surface received file path to user (no UI for received files) | ✅ | iter 27 — ReceivedFileCard list in ReceiveScreen |
+| 6.6 | Generate/persist device fingerprint (defaults to empty string) | ✅ | iter 21 — UUID.randomUUID() on first run, persisted |
 
 ## Phase 7 — Full Functionality (Next Steps — Post UI Polish)
 > Backend integration, real device testing, release prep
@@ -99,11 +99,11 @@
 | 7.3 | Multi-file batch transfer support | ⬜ | |
 | 7.4 | Large file transfer (>100MB) with chunking | ⬜ | |
 | 7.5 | Background receive service (foreground service) | ⬜ | |
-| 7.6 | Package rename: `org.localsend.localsend_app` → `app.scotty` | ⬜ | |
+| 7.6 | Package rename: `org.localsend.localsend_app` → `app.scotty` | 🔄 | iter 35 — applicationId changed; Kotlin rename pending |
 | 7.7 | Play Store listing prep (screenshots, description, privacy policy) | ⬜ | |
 | 7.8 | Signed release APK / AAB | ⬜ | |
 | 7.9 | Crashlytics / error reporting integration | ⬜ | |
-| 7.10 | Unit tests for ViewModel + NearbyTransferService | ⬜ | |
+| 7.10 | Unit tests for ViewModel + NearbyTransferService | 🔄 | iter 36 — 9 tests passing; full ViewModel tests need Robolectric |
 | 7.11 | Instrumented UI tests (Espresso/Compose test) | ⬜ | |
 | 7.12 | Battery/performance profiling on real devices | ⬜ | |
 
@@ -113,25 +113,40 @@
 
 | Phase | Tasks | Complete | % |
 |-------|-------|----------|---|
-| Phase 1 — Foundation | 7 | 4 | 57% |
+| Phase 1 — Foundation | 7 | 7 | 100% |
 | Phase 2 — Send Screen | 7 | 7 | 100% |
-| Phase 3 — Receive Screen | 4 | 1 | 25% |
+| Phase 3 — Receive Screen | 4 | 4 | 100% |
 | Phase 4 — Settings Screen | 4 | 4 | 100% |
-| Phase 5 — Polish & A11y | 8 | 6 | 75% |
-| Phase 6 — Bug Fixes | 6 | 0 | 0% |
+| Phase 5 — Polish & A11y | 8 | 7 | 88% |
+| Phase 6 — Bug Fixes | 6 | 6 | 100% |
 | Phase 7 — Full Functionality | 12 | 0 | 0% |
-| **Total** | **48** | **22** | **~46%** |
+| **Total** | **48** | **35** | **~73%** |
 
-> UI/UX polish target (Phases 1–5): **22 / 30 tasks = 73%**
-> Backend/functionality (Phases 6–7): **0 / 18 tasks = 0%**
-> Overall project: **22 / 48 tasks = ~46%**
+> UI/UX polish target (Phases 1–5): **29 / 30 tasks = 97%**
+> Bug fixes (Phase 6): **6 / 6 tasks = 100%**
+> Backend/functionality (Phase 7): **0 / 12 tasks = 0%**
+> Overall project: **35 / 48 tasks = ~73%**
+
+---
+
+## Iteration History
+
+| Range | Work |
+|-------|------|
+| Iter 1–5 | Foundation: theme, nav bar, NFC scaffold |
+| Iter 6–10 | Send screen: file picker, NFC card, beaming state, error handling |
+| Iter 11–15 | Receive screen: radar rings, M3 typography, shapes, semantics |
+| Iter 16–20 | Polish: EmptyState, edge-to-edge, spring transitions, regression |
+| Iter 21–40 | Bug fixes, DataStore, permissions, received files, history, dialog, icon, splash, tests, animations |
+
+**Iteration 21–40 complete — 2026-03-16**
 
 ---
 
 ## Source Audit Summary (2026-03-16)
-**Total lines:** 1,182 across 10 Kotlin files
+**Total lines:** ~1,800 across 12 Kotlin files (grew from 1,182 with new screens)
 **Backend readiness:** NearbyTransferService ~90%, NfcHceService ~95%, NfcReaderManager ~95%
-**UI readiness (post iters 7–20):** SendScreen ✅, ReceiveScreen ✅, SettingsScreen ✅, NavigationBar ✅
+**UI readiness (post iters 21–40):** SendScreen ✅, ReceiveScreen ✅, SettingsScreen ✅, NavigationBar ✅, PermissionsScreen ✅
 
 ### Screenshot Verification Note
 Screenshot methods return pure white on P9P_XL_Emulator (Apple Silicon + MoltenVK GPU buffer capture issue).
