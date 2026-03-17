@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "org.localsend.localsend_app-mergeDebugResources-60:/values-night-v8/values-night-v8.xml",
+            "outputFile": "org.localsend.localsend_app-mergeDebugResources-61:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/Users/michaelwong/Developer/Scotty/app/android/src/main/res/values-night/themes.xml",
@@ -12,6 +12,24 @@
                         "endLines": "8",
                         "endColumns": "12",
                         "endOffsets": "510"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "141",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "596"
+                    }
+                },
+                {
+                    "source": "/Users/michaelwong/.gradle/caches/8.12/transforms/1e3973c2cacc4187be991f133c7b08a0/transformed/jetified-core-splashscreen-1.0.1/res/values-night-v8/values-night-v8.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "85",
+                        "endOffsets": "136"
                     }
                 }
             ]

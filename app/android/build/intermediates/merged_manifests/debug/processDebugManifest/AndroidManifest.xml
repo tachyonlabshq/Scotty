@@ -75,7 +75,7 @@
             android:name="org.localsend.localsend_app.ui.MainActivity"
             android:exported="true"
             android:hardwareAccelerated="false"
-            android:theme="@style/Theme.LocalSend" >
+            android:theme="@style/Theme.Scotty.Splash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

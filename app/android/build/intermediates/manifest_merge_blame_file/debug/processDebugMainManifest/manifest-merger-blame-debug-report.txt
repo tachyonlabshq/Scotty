@@ -140,8 +140,8 @@
 76-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:51:13-36
 77            android:hardwareAccelerated="false"
 77-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:52:13-48
-78            android:theme="@style/Theme.LocalSend" >
-78-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:53:13-51
+78            android:theme="@style/Theme.Scotty.Splash" >
+78-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:53:13-55
 79            <intent-filter>
 79-->/Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:54:13-57:29
 80                <action android:name="android.intent.action.MAIN" />

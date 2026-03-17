@@ -59,6 +59,7 @@ MERGED from [androidx.customview:customview:1.0.0] /Users/michaelwong/.gradle/ca
 MERGED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/74391e626533d597e706de971b754480/transformed/jetified-customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.core:core-ktx:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/08895e5697af837679051da67976f1cd/transformed/jetified-core-ktx-1.15.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core-splashscreen:1.0.1] /Users/michaelwong/.gradle/caches/8.12/transforms/1e3973c2cacc4187be991f133c7b08a0/transformed/jetified-core-splashscreen-1.0.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.datastore:datastore-core-android:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/cfd388baa830f794386c662c5d9249be/transformed/jetified-datastore-core-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.datastore:datastore-android:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/622ee26d5841e5622d68173a07beeafd/transformed/jetified-datastore-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/b6a4f5ae6ab3db5d9c834f5d7d5d0206/transformed/jetified-datastore-preferences-release/AndroidManifest.xml:17:1-22:12
@@ -232,7 +233,7 @@ ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManif
 	android:exported
 		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:51:13-36
 	android:theme
-		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:53:13-51
+		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:53:13-55
 	android:name
 		ADDED from /Users/michaelwong/Developer/Scotty/app/android/src/main/AndroidManifest.xml:50:13-44
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
@@ -379,6 +380,8 @@ MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/micha
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/michaelwong/.gradle/caches/8.12/transforms/74391e626533d597e706de971b754480/transformed/jetified-customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
 MERGED from [androidx.core:core-ktx:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/08895e5697af837679051da67976f1cd/transformed/jetified-core-ktx-1.15.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-ktx:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/08895e5697af837679051da67976f1cd/transformed/jetified-core-ktx-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-splashscreen:1.0.1] /Users/michaelwong/.gradle/caches/8.12/transforms/1e3973c2cacc4187be991f133c7b08a0/transformed/jetified-core-splashscreen-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-splashscreen:1.0.1] /Users/michaelwong/.gradle/caches/8.12/transforms/1e3973c2cacc4187be991f133c7b08a0/transformed/jetified-core-splashscreen-1.0.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.datastore:datastore-core-android:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/cfd388baa830f794386c662c5d9249be/transformed/jetified-datastore-core-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.datastore:datastore-core-android:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/cfd388baa830f794386c662c5d9249be/transformed/jetified-datastore-core-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.datastore:datastore-android:1.1.1] /Users/michaelwong/.gradle/caches/8.12/transforms/622ee26d5841e5622d68173a07beeafd/transformed/jetified-datastore-release/AndroidManifest.xml:20:5-44

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "org.localsend.localsend_app-mergeDebugResources-60:/values-zh-rTW/values-zh-rTW.xml",
+            "outputFile": "org.localsend.localsend_app-mergeDebugResources-61:/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
                     "source": "/Users/michaelwong/.gradle/caches/8.12/transforms/f84da32127886b2a4a16ea8f73ccfd87/transformed/jetified-material3-release/res/values-zh-rTW/values-zh-rTW.xml",

@@ -9,4 +9,12 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
+
+    <!-- Splash screen theme — extends SplashScreen with Scotty branding -->
+    <style name="Theme.Scotty.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/scotty_background_dark</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenAnimationDuration">600</item>
+        <item name="postSplashScreenTheme">@style/Theme.LocalSend</item>
+    </style>
 </resources>

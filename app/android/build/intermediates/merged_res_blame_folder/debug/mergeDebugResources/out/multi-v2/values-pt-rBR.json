@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "org.localsend.localsend_app-mergeDebugResources-60:/values-pt-rBR/values-pt-rBR.xml",
+            "outputFile": "org.localsend.localsend_app-mergeDebugResources-61:/values-pt-rBR/values-pt-rBR.xml",
             "map": [
                 {
                     "source": "/Users/michaelwong/.gradle/caches/8.12/transforms/2e4659b1a08caee343872c45e50de434/transformed/jetified-play-services-base-18.5.0/res/values-pt-rBR/values.xml",

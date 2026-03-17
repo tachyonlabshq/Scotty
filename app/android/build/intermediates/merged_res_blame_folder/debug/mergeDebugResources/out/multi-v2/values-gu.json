@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "org.localsend.localsend_app-mergeDebugResources-60:/values-gu/values-gu.xml",
+            "outputFile": "org.localsend.localsend_app-mergeDebugResources-61:/values-gu/values-gu.xml",
             "map": [
                 {
                     "source": "/Users/michaelwong/.gradle/caches/8.12/transforms/742893cccaa0742e121690162e51af4f/transformed/jetified-ui-release/res/values-gu/values-gu.xml",
