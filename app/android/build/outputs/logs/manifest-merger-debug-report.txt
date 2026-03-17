@@ -480,7 +480,7 @@ ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/tr
 		ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
 	android:name
 		ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
-permission#org.localsend.localsend_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+permission#app.scotty.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
 		ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
@@ -490,7 +490,7 @@ uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
-uses-permission#org.localsend.localsend_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission#app.scotty.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.15.0] /Users/michaelwong/.gradle/caches/8.12/transforms/19b7b92dcd9096aedfd45688aba0d8f3/transformed/core-1.15.0/AndroidManifest.xml:26:22-94

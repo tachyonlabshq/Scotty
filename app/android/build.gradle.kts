@@ -9,7 +9,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "org.localsend.localsend_app"
+        applicationId = "app.scotty"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
