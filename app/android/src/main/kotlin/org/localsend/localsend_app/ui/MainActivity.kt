@@ -54,6 +54,7 @@ fun BeamApp(viewModel: MainViewModel = viewModel()) {
     val selectedFiles  by viewModel.selectedFiles.collectAsState()
     val selectedTab    by viewModel.selectedTab.collectAsState()
     val nfcBeamStatus  by viewModel.nfcBeamStatus.collectAsState()
+    val receivedFiles  by viewModel.receivedFiles.collectAsState()
     val activity = LocalContext.current as? android.app.Activity
 
     val snackbarHostState = remember { SnackbarHostState() }
@@ -150,11 +151,19 @@ fun BeamApp(viewModel: MainViewModel = viewModel()) {
                     },
                     label = { Text("Send") }
                 )
-                // Receive tab
+                // Receive tab with badge for received file count
                 NavigationBarItem(
                     selected = selectedTab == 1,
                     onClick  = { viewModel.selectTab(1) },
-                    icon     = { Icon(Icons.Default.CallReceived, contentDescription = null) },
+                    icon = {
+                        BadgedBox(badge = {
+                            if (receivedFiles.isNotEmpty()) {
+                                Badge { Text(receivedFiles.size.toString()) }
+                            }
+                        }) {
+                            Icon(Icons.Default.CallReceived, contentDescription = null)
+                        }
+                    },
                     label    = { Text("Receive") }
                 )
                 // Settings tab
