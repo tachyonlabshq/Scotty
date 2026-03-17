@@ -10,7 +10,9 @@ import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Nfc
 import androidx.compose.material.icons.filled.OpenInNew
 import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
@@ -18,7 +20,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun SettingsScreen(viewModel: MainViewModel) {
     val settings by viewModel.settings.collectAsState()
-    var darkMode by remember { mutableStateOf(false) }
+    val darkMode by viewModel.isDarkMode.collectAsState()
 
     Column(
         modifier = Modifier
@@ -64,7 +66,7 @@ fun SettingsScreen(viewModel: MainViewModel) {
             trailingContent = {
                 Switch(
                     checked = darkMode,
-                    onCheckedChange = { darkMode = it }
+                    onCheckedChange = { viewModel.updateDarkMode(it) }
                 )
             }
         )

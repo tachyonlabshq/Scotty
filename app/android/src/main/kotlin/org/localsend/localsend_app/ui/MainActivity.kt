@@ -32,12 +32,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            ScottyTheme {
+            val viewModel: MainViewModel = viewModel()
+            val isDarkMode by viewModel.isDarkMode.collectAsState()
+            ScottyTheme(darkTheme = isDarkMode) {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    BeamApp()
+                    BeamApp(viewModel = viewModel)
                 }
             }
         }
