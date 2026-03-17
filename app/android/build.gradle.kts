@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "org.localsend.localsend_app"
+    namespace = "app.scotty"
     compileSdk = 35
 
     defaultConfig {
