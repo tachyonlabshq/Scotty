@@ -5,14 +5,21 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.spring
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CallReceived
@@ -20,6 +27,7 @@ import androidx.compose.material.icons.filled.Send
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.contentDescription
@@ -110,15 +118,41 @@ fun BeamApp(viewModel: MainViewModel = viewModel()) {
                     )
                 },
                 navigationIcon = {
-                    Box(
-                        modifier = Modifier
-                            .padding(start = 16.dp)
-                            .size(10.dp)
-                            .background(nfcDotColor, CircleShape)
-                            .semantics {
-                                contentDescription = "NFC status: $nfcStatusText"
-                            }
-                    )
+                    Row(
+                        modifier = Modifier.padding(start = 16.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(10.dp)
+                                .background(nfcDotColor, CircleShape)
+                                .semantics {
+                                    contentDescription = "NFC status: $nfcStatusText"
+                                }
+                        )
+                        Spacer(Modifier.width(6.dp))
+                        AnimatedContent(
+                            targetState = nfcStatusText,
+                            transitionSpec = {
+                                fadeIn(spring()) togetherWith fadeOut(spring())
+                            },
+                            label = "nfc_status_label"
+                        ) { statusLabel ->
+                            Text(
+                                text = when (statusLabel) {
+                                    "idle"        -> "NFC Ready"
+                                    "ready"       -> "Listening"
+                                    "advertising" -> "Advertising"
+                                    "discovering" -> "Discovering"
+                                    "connecting"  -> "Connecting\u2026"
+                                    "error"       -> "Error"
+                                    else          -> statusLabel
+                                },
+                                style = MaterialTheme.typography.labelSmall,
+                                color = nfcDotColor
+                            )
+                        }
+                    }
                 },
                 actions = {
                     IconButton(
